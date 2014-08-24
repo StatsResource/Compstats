@@ -1,0 +1,170 @@
+\documentclass[]{article}
+\usepackage{framed}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+%opening
+\title{MA4413 2013}
+\author{Week 9 Tutorial}
+
+\begin{document}
+\maketitle
+%---------------------------------------%
+\section{Accuracy Precision and Recall}
+\begin{center}
+\begin{tabular}{|c|c|c|} \hline
+               & Null hypothesis & Null hypothesis   \\
+               & ($H_0$) true	 & ($H_0$) false \\ \hline
+Reject 	       & \textbf{Type I error }   & \textbf{Correct outcome} \\
+null hypothesis& False positive  & True positive \\ \hline
+Fail to reject & \textbf{Correct outcome} & \textbf{Type II error} \\
+null hypothesis & True negative  & False negative \\ \hline
+\end{tabular} 
+\end{center}
+\bigskip
+In the context of a binary classification prediction procedure 
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline  & Predicted Negative & Predicted Positive \\ 
+\hline Observed Negative & True Negative & False Positive \\ 
+\hline Observed Positive & False Negative & True Positive \\ 
+\hline 
+\end{tabular} 
+\end{center}
+
+Accuracy, Precision and recall are defined as
+\[\mbox{Accuracy}=\frac{tp+tn}{tp+tn+fp+fn} \]
+\[\mbox{Precision}=\frac{tp}{tp+fp} \] 
+\[\mbox{Recall}=\frac{tp}{tp+fn} \]
+
+The F measure is computed as
+\[F = 2 \cdot \frac{\mathrm{precision} \cdot \mathrm{recall}}{ \mathrm{precision} + \mathrm{recall}}\]
+\subsection*{Questions}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+& Predicted  & Predicted \\
+ & Negative & Positive \\ \hline
+Negative Cases & TN: 9,700  & FP: 165 \\ \hline
+Positive Cases & FN: 35 & TP: 100 \\ \hline
+\end{tabular} 
+\end{center}
+\newpage
+With reference to the table above, compute each of the following appraisal metrics.
+\begin{multicols}{2} 
+\begin{itemize}
+    \item[a.] Accuracy
+    \item[b.] Precision
+    \item[c.] Recall
+    \item[d.] $F$ measure
+    \end{itemize}
+\end{multicols}
+
+\section{Computer Output}
+Statistical Procedures were performed using a statistical programming language called $R$.
+A brief description of each procedure is provided. For each procedures, identify the null and alternative hypotheses, the $p-$value, and your conclusion for this test.
+
+
+\begin{itemize}
+\item If the $p-$value is less than 0.05 : reject the null hypothesis.
+\item If the $p-$value is greater than 0.05 : fail to reject the null hypothesis.
+\end{itemize}
+% prop.test
+% Shapiro Wilk
+% Grubb's
+% var test
+\subsection*{Test 1. Single Sample Test for Proportions}
+\begin{itemize}
+\item Sample size ($n$) = 500
+\item Number of successes ($x$) = 280
+\item Expected value under null hypothesis (Usually $\pi$, but here as $p$)
+\end{itemize}
+\begin{framed}
+\begin{verbatim}
+> prop.test(x=280,n=500,p=0.60)
+
+   1-sample proportions test with continuity correction
+
+data:  280 out of 500, null probability 0.6
+X-squared = 3.1688, df = 1, p-value = 0.07506
+alternative hypothesis: true p is not equal to 0.6
+95 percent confidence interval:
+ 0.5151941 0.6038700
+sample estimates:
+   p 
+0.56 
+> 
+\end{verbatim}
+\end{framed}
+\newpage
+\subsection*{Test 2. F Test for equality of variance}
+\begin{itemize}
+\item In this procedure, we determine whether or not two \textit{\textbf{populations}} have the same variance.
+\item The assumption of equal variance of two populations underpins several inference procedures. This assumption is tested by comparing the variance of samples taken from both populations.
+\item The null and alternative hypotheses are as follows:
+\[ H_0: \sigma^2_1 = \sigma^2_2 \]
+\[ H_1: \sigma^2_1 \neq \sigma^2_2 \]
+\end{itemize}
+\begin{framed}
+\begin{verbatim}
+> var.test(X,Y)
+
+        F test to compare two variances
+
+data:  X and Y
+F = 2.5122, num df = 9, denom df = 9, p-value = 0.1862
+alternative hypothesis: true ratio of variances
+  is not equal to 1
+95 percent confidence interval:
+  0.6239986 10.1141624
+sample estimates:
+ratio of variances 
+          2.512215 
+\end{verbatim}
+\end{framed}
+
+\subsection*{Test 3. Shapiro Wilk's Test for Normality}
+\begin{itemize}
+\item We will often be required to determine whether or not a data set is normally distributed.
+This assumption underpins many statistical models.
+\item The null hypothesis is that the data set is normally distributed.
+\item The alternative hypothesis is that the data set is not normally distributed.
+\item One procedure for testing these hypotheses is the Shapiro-Wilk test, implemented in \texttt{R} using the command \texttt{shapiro.test()}.
+\end{itemize}
+\begin{framed}
+\begin{verbatim}
+> shapiro.test(X)
+
+        Shapiro-Wilk normality test
+
+data:  X
+W = 0.9849, p-value = 0.1012
+
+
+\end{verbatim}
+\end{framed}
+\subsection*{Test 4. Grubbs' Test for Determining an Outlier}
+
+The Grubbs' test is used to determine if there are any outliers in a data set.\\ \bigskip
+
+\noindent There is no agreed formal definition for an outlier. The definition of outlier used for this procedure is a value that unusually distant from the rest of the values (For the sake of clarity , we shall call this type of outlier a \textbf{Grubbs' Outlier}). Consider the following data set: is the lowest value 4.01 an outlier?
+\begin{center}
+\begin{verbatim}
+6.98 8.49 7.97 6.64
+8.80 8.48 5.94 6.94
+6.89 7.47 7.32 4.01
+\end{verbatim}
+\end{center}
+
+
+\begin{framed}
+\begin{verbatim}
+> grubbs.test(x, two.sided=T)
+Grubbs test for one outlier
+data: x
+G = 2.4093, U = 0.4243, p-value = 0.05069
+alternative hypothesis: lowest value 4.01 is an outlier
+\end{verbatim}
+\end{framed}
+%---------------------------------------%
+\end{document}

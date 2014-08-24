@@ -1,0 +1,373 @@
+\documentclass[a4]{beamer}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{newlfont}
+\usepackage{amsmath,amsthm,amsfonts}
+%\usepackage{beamerthemesplit}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{mathptmx} % Font Family
+\usepackage{helvet} % Font Family
+\usepackage{color}
+\mode<presentation> {
+\usetheme{Default} % was Frankfurt
+\useinnertheme{rounded}
+\useoutertheme{infolines}
+\usefonttheme{serif}
+%\usecolortheme{wolverine}
+% \usecolortheme{rose}
+\usefonttheme{structurebold}
+}
+\setbeamercovered{dynamic}
+\title[MA4413]{Statistics for Computing \\ {\normalsize MA4413 Lecture 8B}}
+\author[Kevin O'Brien]{Kevin O'Brien \\ {\scriptsize Kevin.obrien@ul.ie}}
+\date{Autumn Semester 2013}
+\institute[Maths \& Stats]{Dept. of Mathematics \& Statistics, \\ University \textit{of} Limerick}
+
+\renewcommand{\arraystretch}{1.5}
+%----------------------------------------------------------------------------------------------------------%
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+
+%----------------------------------------------------------------------------------------------------------%
+
+%--------------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Two Sample Inference Procedures}
+\begin{itemize}
+\item Previously we looked at inference procedures (Confidence Intervals and Hypothesis Testing) for single samples.
+\item Yesterday we looked at \textit{\textbf{paired}} samples, with two sets of paired measurements. With paired measurements, we are specifically interested in the \textbf{\textit{case-wise}} differences.
+\item Although there are two sets of data, we consider the single data set of case-wise differences.
+\item Now we look at the case of two independent sample procedures.
+\item Independent samples are distinct from paired samples, in that data in one set are not paired with data in another set.
+\end{itemize}
+\end{frame}
+
+%--------------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Two Sample Inference Procedures}
+
+\begin{itemize}
+\item Firstly, we will look at the difference in the means of two independent populations.
+\item Let us assume that the both populations are normally distributed $N(\mu_X,\sigma^2_X)$ and $N(\mu_Y,\sigma^2_Y)$
+\item The difference in means for two independent populations X and Y is denoted $\mu_X - \mu_Y$.
+\item Almost always, this value is unknown, and is instead estimated by the difference in sample means: $\bar{X} - \bar{Y}.$
+\item The sample sizes do not need to be equal necessarily. We denote the respective sample sizes $n_X$ and $n_Y$.
+\item For the moment, we will assume that both $n_X$ and $n_Y$ are large samples ($ \geq 30$).
+\end{itemize}
+\end{frame}
+%--------------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Sampling}
+\begin{itemize}
+\item The sampling distribution of the difference in means is normally distributed, when both samples sizes are greater than 30.
+\item The expected value of this distribution is $\mu_X - \mu_Y$.
+\item Importantly, the standard error of this distribution is
+\[ S.E(\bar{X} - \bar{Y}) = \sqrt{\frac{\sigma^2_X}{n_X} + \frac{\sigma^2_Y}{n_Y}} \]
+\item The standard deviations for populations X and Y are $\sigma_X$ and $\sigma_Y$ respectively.
+\item Usually these population standard deviations are estimated by the sample standard deviations $s_X$ and $s_Y$ respectively.
+\end{itemize}
+\end{frame}
+
+%--------------------------------------------------------------------------%
+\begin{frame}
+\frametitle{$95\%$ Confidence Intervals}
+The 95\% confidence interval $\mu_X - \mu_Y$ is computed as
+
+\[ (\bar{X} - \bar{Y}) \pm 1.96 \sqrt{\frac{s^2_X}{n_X} + \frac{s^2_Y}{n_Y}}\]
+We will use this in an example shortly.
+\end{frame}
+%--------------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Hypothesis Testing}
+\begin{itemize}
+\item Hypothesis testing works in much the same way as material we have covered already, in that we will use a four step process.
+\item The final two steps (critical value step and decision rule step) are precisely the same as previously.
+\item We will now discuss the first two steps.
+\end{itemize}
+\end{frame}
+
+%--------------------------------------------------------------------------%
+
+\begin{frame}
+\frametitle{Hypothesis Testing: Null and Alternative Hypothesis}
+We are often interested in whether or not two populations have equal mean values. Accordingly, we would construct the hypotheses accordingly.
+\begin{itemize}
+\item[$H_0$] $\mu_X = \mu_Y$
+\item[$H_1$] $\mu_X \neq \mu_Y$
+\end{itemize}
+
+Equivalently we may view in the context of the difference in the populations means, where a difference of zero indicates equality of means.
+\begin{itemize}
+\item[$H_0$] $\mu_X - \mu_Y = 0$
+\item[$H_1$] $\mu_X - \mu_Y \neq 0$
+\end{itemize}
+This second approach is more intuitive in the context of constructing the test statistic.
+\end{frame}
+%--------------------------------------------------------------------------%
+
+\begin{frame}
+\frametitle{Hypothesis Testing: Test Statistic}
+
+\begin{itemize}
+\item The standard error for difference in means has been introduced previously
+\[ S.E(\bar{X} - \bar{Y}) = \sqrt{\frac{\sigma^2_X}{n_X} + \frac{\sigma^2_Y}{n_Y}} \]
+\item \textbf{Null value}: The expected value of the difference under the null hypothesis $\mu_X - \mu_Y$ is always 0, when the equality of population means is in question.
+\item \textbf{Observed Value}: The observed difference between sample means is $\bar{X} - \bar{Y}$.
+\end{itemize}
+
+
+
+\end{frame}
+
+
+%--------------------------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Example 1: Difference in Means (a) }
+Two sets of patients are given courses of treatment under two different drugs. The benefits
+derived from each drug can be stated numerically in terms of the recovery times. There are 40 patients in treatment group 1 (i.e. Drug 1), and 45 patients in treatment group 2 (i.e. Drug 2). The mean recovery time and standard deviations are as follows:
+\begin{itemize}
+\item Drug 1:  $n_1$ = 40 , $\bar{x}_1$ = 3.3 days and $s_1 = 1.524$
+\item Drug 2:  $n_2$ = 45 , $\bar{x}_2$ = 4.3 days and $s_2 = 1.951 $
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Example 1: Difference in Means (b) }
+\begin{itemize}
+\item The first step in hypothesis testing is to specify the null hypothesis and an alternative hypothesis.
+\item When testing differences between mean recovery times, the null hypothesis is that the two population means are equal.
+\item That is, the null hypothesis is:\\
+$H_0: \mu_1 = \mu_2$ ( The population means are equal)\\
+$H_1: \mu_1 \neq \mu_2$ (The population means are different)
+\end{itemize}
+
+
+
+(Remark: Two Tailed Test, therefore $k = 2$, and $\alpha = 0.05$)
+\end{frame}
+
+%-------------------------------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Example 1: Difference in Means (c) }
+\begin{itemize}
+\item The observed difference in means is 1 day.
+\item The relevant formula for the standard error is
+\[ S.E(\bar{x}_1 - \bar{x}_2) = \sqrt{{s^2_1\over n_1}+{s^2_2 \over n_2}} \]
+\item  \[ S.E(\bar{x}_1 - \bar{x}_2) = \sqrt{{(1.524)^2 \over 40}+{(1.951)^2 \over 45}}   \]
+\item  \[ S.E(\bar{x}_1 - \bar{x}_2) = 0.377\mbox{ days}\]
+\end{itemize}
+\end{frame}
+%-------------------------------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Example 1: Difference in Means (d) }
+\begin{itemize}
+\item The Test statistic is therefore
+\[ TS = {\mbox{observed} - \mbox{null} \over \mbox{Std. Error}}  = {1 - 0 \over 0.377 } = 2.65 \]
+\item Two Tailed Test, therefore $k = 2$, and $\alpha = 0.05$. Also two large samples. The CV is 1.96.
+\end{itemize}
+\end{frame}
+
+
+%-------------------------------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Example 1: Difference in Means (e) }
+\textbf{Decision Rule}
+\[ |TS| > CV ?  \]
+\begin{itemize}
+\item If Yes: Reject the null Hypothesis
+\item If No : Fail to reject the Null Hypothesis
+\end{itemize}
+$|2.65|$ is greater than 1.96. We reject the null hypothesis. There is a significant difference in the effectiveness of the two drug treatments.
+\end{frame}
+
+
+
+%--------------------------------------------------------------------------%
+
+\begin{frame}
+\frametitle{Two Small Samples Case}
+\begin{itemize}
+\item Previously we have looked at large samples, now we will consider small samples.
+\item (For the sake of clarity, I will not use small samples that have a combined sample size of greater than 30.
+\item Additionally we require the assumption that both samples have equal variance. This assumption \textbf{must} be tested with another formal hypothesis test. We will revisit this later, and in the mean time, assume that the assumption of equal variance holds.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Two Small Samples Case}
+\begin{itemize}
+\item The key differences between the large sample case and the small sample cases arise in the following steps.
+    \begin{itemize}
+    \item The standard error is computed in a different way (see next slide).
+    \item The degrees of freedom used to compute the critical value is $(n_X-1) + (n_Y - 1)$) or equivalently ($n_X + n_Y - 2$).
+    \item Also - a formal test of equality of variances is required beforehand (End of Year Exam)
+    \end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Two Small Samples Case: Standard Error}
+Computing the standard error requires a two step calculation. From the formulae, we have the two equations below. The first term $s_p^2$ is called the \textbf{\textit{pooled variance}} of the combined samples.
+\begin{eqnarray*}
+s_p^2&=&\frac{s_X^2(n_X-1)+s_Y^2(n_Y-1)}{n_X+n_Y-2}.\\
+S.E.(\bar{X}-\bar{Y})&=&\sqrt{s_p^2\left(\frac{1}{n_X}+\frac{1}{n_Y}\right)}.\\
+\end{eqnarray*}
+\end{frame}
+
+
+%-------------------------------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Example 2: Difference in Means (a) }
+\begin{itemize}
+\item For a random sample of 10 light bulbs for a particular brand, the mean bulb life is 4,000 hr with a sample standard deviation of 200 hours.
+\item For another brand of bulbs, a random sample of 8 has a sample mean lifetime of 4,300 hours
+and a sample standard deviation of 250 hours. \item Test the hypothesis that there is no difference between the
+mean operating life of the two brands of bulbs, using the 5 percent level of significance
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------------------------------------------%
+
+\begin{frame}
+\frametitle{Example 2: Difference in Means (b) }
+\begin{itemize}\item $n_1 = 10$ and $n_2 = 8$.
+\item $\bar{x}_1 = 4000$, $\bar{x}_2 = 4,300 $ , therefore  $\bar{x}_1 - \bar{x}_2 = -300$ hours
+\item $s_1  = 200$, $s_2 = 250$ hours.
+\item Small sample - Degrees of freedom $n_1 + n_2 - 2 = 10 + 8 - 2 = 16$
+\end{itemize}\end{frame}
+%-------------------------------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Example 2: Difference in Means (c) }
+\textbf{Pooled variance estimate}
+\[ s^2_p = {(n_1 - 1)s^2_1  + (n_2 - 1)s^2_ 2\over n_1 + n_2 - 2 } = {(9 \times 200^2 ) +( 7 \times 250^2) \over 16 }  \]
+\[ s^2_p  = 49843.75 \]
+\end{frame}
+
+%-------------------------------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Example 2: Difference in Means (d) }
+\textbf{Computing the Standard Error}
+\[ S.E(x_1 - x_2) = \sqrt{s^2_p \left({1\over n_1}+{1\over n_2} \right)}\]
+
+\[ S.E(x_1 - x_2) = \sqrt{49843.75 \left({1\over 10}+{1\over 8} \right)}\]
+
+\[ S.E(x_1 - x_2) = \sqrt{11214.84} = 105.9\]
+
+\end{frame}
+
+%-------------------------------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Example 2: Difference in Means (e) }
+\textbf{Test Statistic and Critical Value}\\
+\begin{itemize}
+\item The Test Statistic is \[ TS  = {(-300) - 0 \over 105.9}  = -2.83 \]
+\item The Critical Value is determined with $\alpha = 0.05$, $k=2$, $df = 16 $
+\item $CV = 2.120$
+\item We can now apply the decision rule : Is the absolute value of the Test Statistic greater than the Critical Value?
+\item Is $2.83 > 2.12$? Yes We reject $H_0$. There is evidence of a difference in means.
+\end{itemize}
+\end{frame}
+
+\end{document}
+
+%-------------------------------------------------------------------------------------------%
+
+\begin{frame}
+\frametitle{Example 5: Difference in Proportions (a)}
+\begin{itemize}
+\item An experiment is conducted investigating the long-term effects of early childhood intervention programs (such as head start).
+\item In one experiment, the high-school drop out rate of the experimental group (which attended the early childhood program)
+ and the control group (which did not) were compared.
+\item In the experimental group, 73 of 85 students graduated from high school. \item In the control group, only 43 of 82 students graduated.
+Is this difference statistically significant? (Assume that the 0.05 level is chosen.) \end{itemize}
+\end{frame}
+
+%-------------------------------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Example 5: Difference in Proportions (b)}
+\begin{itemize}
+\item
+The first step in hypothesis testing is to specify the null hypothesis and an alternative hypothesis.
+\item When testing differences between proportions, the null hypothesis is that the two population proportions are equal.
+\item That is, the null hypothesis is:\\
+$H_0: \pi_1 = \pi_2$\\
+$H_1: \pi_1 \neq \pi_2$\\
+\end{itemize}
+(Remark: Two Tailed Test k = 2, and $\alpha = 0.05$)
+\end{frame}
+%-------------------------------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Example 5: Difference in Proportions (c)}
+\begin{itemize}
+\item The next step is to compute the difference between the sample proportions.
+\item In this example, $\hat{p}_1 - \hat{p}_2$ = $73/85 - 43/82$ = $0.8588 - 0.5244$.
+\item $\hat{p}_1 - \hat{p}_2$ = $0.8588 - 0.5244$ = 0.3344.
+\item Difference is $33.44\%$
+\end{itemize}
+\end{frame}
+
+
+
+%-------------------------------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Example 5: Difference in Proportions (d)}
+The formula for the estimated standard error is:
+
+\[ S.E (\hat{p}_1 - \hat{p}_2)  = \sqrt{\bar{p}(100- \bar{p} \left( {1 \over n_1} + {1 \over n_2}  \right)} \]
+
+
+where $\bar{p}$ is a aggregate proportion ( proportion of successes from overall sample, regardless of which group they are in).
+\end{frame}
+
+%-------------------------------------------------------------------------------------------%
+
+
+
+
+\begin{frame}
+\frametitle{Example 5: Difference in Proportions (d)}
+\textbf{Aggregate Proportion}:\\
+\[ \bar{p}  = {x_1  + x_2 \over n_1 + n_2} \times 100\% = {73+43 \over 85 + 82} \times 100\% = { 116 \over 167}\times 100\% = 69.5\% \]
+\textbf{Standard Error}:\\
+\[ S.E (\hat{p}_1 - \hat{p}_2)  =  \sqrt{69.5 \times 30.5 \left( {1 \over 85} + {1 \over 82}  \right)}  = 7.13\% \]
+\end{frame}
+
+
+
+%-------------------------------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Example 5: Difference in Proportions (e)}
+\textbf{Test Statistic}:
+\begin{itemize} \item Observed difference :
+85.88\% - 52.44\%  = 33.44\% \item [ i.e (73/85) - (43 /82) ]
+\item Under the null hypothesis, the expected difference is zero.
+\item Test Statistic is therefore \[T.S. = {33.44\% \over 7.13\%} = 4.69\]
+\end{itemize}
+
+\end{frame}
+%-------------------------------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Example 5: Difference in Proportions (e)}
+\begin{itemize}
+\item The Critical value is 1.96 ( Large sample , $\alpha = 0.05$, k=2).
+
+\item The test statistic TS = 4.69, is greater than the critical value CV = 1.96, so we reject the null hypothesis.
+\item The conclusion is that the probability of graduating from high school is greater for students who have participated in the early childhood intervention program than for students who have not.
+\end{itemize}
+
+\end{frame}
+
+
+
+
+
+
+\end{document}
+
+
+\end{document}

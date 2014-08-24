@@ -1,0 +1,213 @@
+\documentclass[a4]{beamer}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{newlfont}
+\usepackage{amsmath,amsthm,amsfonts}
+%\usepackage{beamerthemesplit}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{mathptmx}  % Font Family
+\usepackage{helvet}   % Font Family
+\usepackage{color}
+
+\mode<presentation> {
+ \usetheme{Default} % was Frankfurt
+ \useinnertheme{rounded}
+ \useoutertheme{infolines}
+ \usefonttheme{serif}
+ %\usecolortheme{wolverine}
+% \usecolortheme{rose}
+\usefonttheme{structurebold}
+}
+
+\setbeamercovered{dynamic}
+
+\title[MA4413t]{Statistics for Computing \\ {\normalsize Revision Class 13A}}
+\author[Kevin O'Brien]{Kevin O'Brien \\ {\scriptsize kevin.obrien@ul.ie}}
+\date{Summer 2011}
+\institute[Maths \& Stats]{Dept. of Mathematics \& Statistics, \\ University \textit{of} Limerick}
+
+\renewcommand{\arraystretch}{1.5}
+
+
+\begin{document}
+%----------------------------------------------------------------------------------------------------------%
+
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\frame{
+\frametitle{Revision for Inference Procedures}
+\large
+\begin{itemize}
+\item Definitions
+\item Computing Confidence Intervals 
+\item Performing Hypothesis Testing
+\begin{itemize}
+\item by comparing test statistics to critical values
+\item by considering the p-value
+\item by using the confidence interval.
+\end{itemize}
+\end{itemize}
+}
+
+\frame{
+\frametitle{Inference : Definitions (1) }
+\large
+\begin{itemize}
+\item Samples
+\begin{itemize}
+\item Sample and Population
+\item Sampling error
+\end{itemize}
+\item Sampling Distributions
+\begin{itemize}
+\item Central Limit Theorem
+\item Standard Error
+\end{itemize}
+\end{itemize}
+}
+
+\frame{
+\frametitle{Inference : Definitions (2) }
+\begin{itemize}
+
+\item Underlying theory of hypothesis testing
+\large
+\begin{itemize}
+\item The p-value
+\end{itemize}
+
+\item Hypothesis tests
+\begin{itemize}
+\item Null hypothesis
+\item Alternative hypothesis
+\end{itemize}
+\item Decisions
+\begin{itemize}
+\item Test Statistics
+\item Acceptance Region
+\item Critical Regions (Rejection Region)
+\end{itemize}
+\end{itemize}
+}
+
+
+\frame{
+\frametitle{Inference : Definitions (3) }
+\large
+\begin{itemize}
+
+\item Types of Error
+\begin{itemize}
+\item Type I error (Significance)
+\item Type II error (Power)
+\end{itemize}
+
+
+\item Important Skills
+\begin{itemize}
+\item Using Murdoch-Barnes table 7 to compute Quantiles / Critical Values.
+\item Using Murdoch-Barnes table 3 to compute p-Values.
+\end{itemize}
+\end{itemize}
+}
+
+\frame{
+\frametitle{Inference : Structure of a Hypothesis Test (1) }
+\large
+\begin{itemize}
+\item Formally write out the null and Alternative Hypothesis.
+\begin{itemize}
+\item Denote the null as $H_0$ and the alternative as $H_1$.
+\item Use the parameter values (i.e. $\mu$ and $\pi$), not the sample estimates.
+\item Remember to provide a brief description of each hypothesis.
+\end{itemize}
+\end{itemize}
+}
+
+
+\frame{
+\frametitle{Inference : Structure of a Hypothesis Test (2) }
+\large
+
+\begin{itemize}
+\item Compute the Test Statistic ($TS$)
+\begin{itemize}
+\item You will need to compute the value for Standard Error (See back of exam paper).
+\item The general structure is 
+\[ {\mbox{observed value} - \mbox{null value} \over \mbox{Standard Error}}  \]
+\item The p-value is computed as $P(Z \geq |TS|)$ (from Murdoch Barnes 3). \\N.B. p-value is for large samples only.
+\end{itemize}
+\end{itemize}
+}
+
+
+
+\frame{
+\frametitle{Inference : Structure of a Hypothesis Test (3) }
+\large
+
+\begin{itemize}
+\item Determine the Critical Value
+\begin{itemize}
+\item You will need to know the sample size ($n$), the significance ($\alpha$) , and the number of tails ($k$).
+\item In this module, $\alpha$ = 0.05 and $k=2$ always.
+\item Depending on the sample size the degrees of freedom is $\nu = n-1$ 9 when $n \leq 30$ or $\nu = \infty$ when $n > 30$
+\end{itemize}
+\end{itemize}
+}
+
+
+\frame{
+\frametitle{Inference : Structure of a Hypothesis Test (4) }
+
+\begin{itemize}
+\item Making a decision (Critical Value) :  Is the absolute value of the Test Statistic greater than the Critical Value?
+\begin{itemize}
+\item If $|TS| > CV $ We reject the null hypothesis.
+\item If $|TS| \leq CV $ We fail to reject the null hypothesis.
+\end{itemize}
+\end{itemize}
+}
+
+\frame{
+\frametitle{Inference : Structure of a Hypothesis Test (4) }
+\begin{itemize}
+\item Making a decision (p-value) : \\ Is the p-value less than than the critical threshold $\alpha / k$.?
+\begin{itemize}
+\item If p-value $< \alpha /k $ :  We reject the null hypothesis.
+\item If p-value $\geq \alpha /k $ : We fail to reject the null hypothesis.
+\end{itemize}
+\end{itemize}
+
+
+
+}
+
+\frame{
+\frametitle{Inference : Confidence Intervals }
+
+Basic Structure
+
+\[ \mbox{Observed value} \pm [\mbox{Quantile}\times \mbox{Standard Error}] \] 
+
+
+
+}
+
+
+
+\frame{
+\frametitle{Inference : Paired values}
+
+\begin{itemize}
+
+\item Know how to compute case-wise differences.
+\item Know how to compute the mean of the case-wise differences (see formulae). 
+\item Know how to compute the standard deviation of the casewise differences (see formulae).
+\end{itemize} 
+}
+\end{document}

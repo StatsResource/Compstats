@@ -1,0 +1,14 @@
+\frametitle {Dice Simulation in \texttt{R}}
+\begin{verbatim}
+> #simulate 10 rolls of a die
+> n = 10
+> x = sample(1:6,n,replace=TRUE)
+> x
+ [1] 5 1 4 2 6 6 2 4 2 5
+>
+> #Compute the cumulative average
+> cumsum(x)/1:n
+[1] 5.00 3.00 3.33 3.00 3.60 4.00 3.71 3.75 3.56 3.70
+>
+\end{verbatim}
+We will return to sampling at a later date. Meanwhile, you can try out this code for larger values of $n$.

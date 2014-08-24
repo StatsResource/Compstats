@@ -1,0 +1,7 @@
+\frametitle{Exponential Distribution}
+\begin{itemize}
+\item The Exponential Rate
+\item Related to the Poisson mean (m)
+\item If we expect 12 occurrences per hour - what is the rate?
+\item We would expected to wait 5 minutes between occurrences.
+\end{itemize}

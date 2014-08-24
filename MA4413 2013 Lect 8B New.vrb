@@ -1,0 +1,12 @@
+\frametitle {Example 1 (c) : Test Statistic and Critical Value }
+\large
+\[ TS = \frac{8800 - 9000}{158.11} \]
+\begin{itemize}
+\item The test statistic $TS = -1.265$
+\item The CV is determined with $\alpha = 0.05$ and $k = 2$ (column = $\alpha/k=0.025$).
+\item The sample is small n = 10 $df = n-1 = 9$ (i.e. row =9).
+\item Therefore $CV = 2.262$
+
+\item (Remark: If the sample was large, we could use $CV = 1.96$).
+
+\end{itemize}
