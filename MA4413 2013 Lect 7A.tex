@@ -30,11 +30,11 @@
 \renewcommand{\arraystretch}{1.5}
 
 \begin{document}
-\begin{frame}
+
 \titlepage
-\end{frame}
-\begin{frame}
-\frametitle{Margin of Error}
+
+
+\noindent \textbf{Margin of Error}
 
 \begin{itemize}
 \item The product of the quantile and the standard error give us the width of the confidence interval
@@ -44,10 +44,10 @@
 \item By choosing an appropriate sample size, it is possible to ensure that the margin of error does not excess a certain threshold.
 \end{itemize}
 
-\end{frame}
 
-\frame{
-\frametitle{Point Estimates for proportions (1) }
+
+{
+\noindent \textbf{Point Estimates for proportions (1) }
 (From Last Class)
 
 Of a sample of 160 computer programmers, 56 reported than Python was their primary programming language.
@@ -61,8 +61,8 @@ Let $\pi$ be the proportion of all programmers who regard Python as their progra
 %----------------------------------------------------------------%
 
 %----------------------------------------------------------------%
-\frame{
-\frametitle{Confidence Interval for a proportion (2) }
+{
+\noindent \textbf{Confidence Interval for a proportion (2) }
 
 Refer back to our earlier example of the proportion of Python programmers. Compute a $95\%$ confidence interval.\\
 
@@ -80,8 +80,8 @@ S.E. (\hat{p}) \;=\; \sqrt{ {35 \times 65 \over 160 }} =  3.77\%
 \]
 }
 %------------------------------------------------------------------------------%
-\begin{frame}
-\frametitle{Student's $t-$distribution (1)}
+
+\noindent \textbf{Student's $t-$distribution (1)}
 (Revision from last class, but very important).
 \begin{itemize} \item We indicated that use of the normal distribution in estimating a population mean is warranted for any large sample ($n > 30$).
 
@@ -90,21 +90,21 @@ S.E. (\hat{p}) \;=\; \sqrt{ {35 \times 65 \over 160 }} =  3.77\%
 \item Now we consider the situation in which the sample is small and the population is assumed to be normally distributed, but $\sigma$ is not known.
 \item We use the \textbf{\textit{Student's $t-$distribution}} for small samples.
 \end{itemize}
-\end{frame}
+
 %------------------------------------------------------------------------------%
-\begin{frame}
-\frametitle{Student's $t-$distribution (2)}
+
+\noindent \textbf{Student's $t-$distribution (2)}
 \begin{itemize}
 \item Student's $t-$distribution is a variation of the normal distribution, designed to factor in the increased uncertainty resulting from smaller samples.
 \item The distribution is really a family of distributions, with
 a somewhat different distribution associated with the degrees of freedom ($df$). For a confidence interval for the
 population mean based on a sample of size n, $df = n - 1$.
 \end{itemize}
-\end{frame}
+
 
 %------------------------------------------------------------------------------%
-\begin{frame}
-\frametitle{Student's $t-$distribution (3)}
+
+\noindent \textbf{Student's $t-$distribution (3)}
 \begin{itemize}
 \item With increasing
 sample size, the $t-$distribution approaches the form of the standard normal (`Z') distribution.
@@ -116,12 +116,12 @@ sample size, the $t-$distribution approaches the form of the standard normal (`Z
 
 \item ( As this will be relevant later, remember that a confidence interval is a \textbf{two-tailed} procedure, i.e. $k=2$.)
 \end{itemize}
-\end{frame}
+
 
 
 %------------------------------------------------------------------------------%
-\begin{frame}
-\frametitle{Confidence Interval for a Mean (Small Sample)}
+
+\noindent \textbf{Confidence Interval for a Mean (Small Sample)}
 \begin{itemize}
 \item The mean operating life for a random sample of $n = 10$ light bulbs is $\bar{x} = 4,000$ hours, with the sample
 standard deviation $s = 200$ hours. \item The operating life of bulbs in general is assumed to be approximately normally distributed.\item
@@ -134,11 +134,11 @@ confidence interval as follows:
 
 \item From Murdoch Barnes Table 7, the $t-$quantile with $df=9$ is 2.262. (95\% confidence interval so use 0.0250 column).
 \end{itemize}
-\end{frame}
+
 
 %--------------------------%
-\begin{frame}
-\frametitle{Interpreting Confidence Intervals}
+
+\noindent \textbf{Interpreting Confidence Intervals}
 \begin{itemize}
 \item In the previous lectures, we looked at confidence intervals, noting that these intervals are a pair of limits defining an interval.
 \item Often, we can use confidence intervals to make inferences on a population parameter.
@@ -146,43 +146,43 @@ confidence interval as follows:
 \item We would surmise than the average points level for group $B$ is higher.
 \item Lets suppose that the $95\%$ confidence interval was $(-15,75)$ points. Consider what each of the two numbers mean,
 \end{itemize}
-\end{frame}
+
 %--------------------------%
 
-\begin{frame}
-\frametitle{Interpreting Confidence Intervals}
+
+\noindent \textbf{Interpreting Confidence Intervals}
 \begin{itemize}
 \item The upper bound ($+75$) suggests that those in group $B$ could have, on average, 75 more points than those in group $A$.
 \item But the lower bound ($-15$) suggests  that those in group $A$ could have, on average, 15 more points than those in group $B$.
 \item Also, the confidence interval allows for the possibility of both groups having equal means  (i.e. $\bar{x}_B-\bar{x}_A$ = 0)
 \item Essentially we can not be $95\%$ confident that group $B$ has a higher mark than group $A$.
 \end{itemize}
-\end{frame}
+
 
 %--------------------------------------------------------------------------------------------------------------------------%
-\begin{frame}
-\frametitle{Confidence Intervals}
+
+\noindent \textbf{Confidence Intervals}
 \begin{itemize}
 \item So far, we have studied two types of confidence interval, a confidence interval for a sample mean and for a sample proportion.\\ (Later we will call these \textbf{\textit{One Sample}} confidence Intervals.
 \item There are more types of confidence intervals that we will cover later in this course. \\ (We shall refer to these confidence intervals as the \textbf{\textit{Two Sample}} confidence Intervals.
 \item We shall turn our attention to \textit{\textbf{Hypothesis Testing}} in the mean time.
 \end{itemize}
-\end{frame}
+
 
 %--------------------------------------------------------------------------------------------------------------------------%
-\begin{frame}
-\frametitle{Introduction to Hypothesis tests}
+
+\noindent \textbf{Introduction to Hypothesis tests}
 \large
 \begin{itemize} \item
 In statistics, a  hypothesis test is a method of making decisions using experimental data. \item A result is called \textbf{\emph{statistically significant}} if it is unlikely to have occurred by chance. \item A statistical test procedure is comparable to a trial where a defendant is considered innocent as long as his guilt is not proven.\item  The prosecutor tries to prove the guilt of the defendant. Only when there is enough charging evidence the defendant is condemned.
 \end{itemize}
 
-\end{frame}
+
 
 
 %--------------------------------------------------------------------------------------------------------------------------%
-\begin{frame}
-\frametitle{Hypothesis tests (Null and Alternative Hypotheses) }
+
+\noindent \textbf{Hypothesis tests (Null and Alternative Hypotheses) }
 \large
 %The phrase "test of significance" was coined by Ronald Fisher;
 %"Critical tests of this kind may be called tests of significance, and when such tests are available we may discover whether a second sample is or is not significantly different from the first." \\
@@ -190,24 +190,24 @@ In statistics, a  hypothesis test is a method of making decisions using experime
 \item The null hypothesis (which we will denoted $H_0$) is an hypothesis about a population parameter, such as the population mean $\mu$. \item The purpose of hypothesis testing is to test the viability of the null hypothesis in the light of experimental data. \item The alternative hypothesis $H_1$ expresses the exact opposite of the null hypothesis. \item Depending on the data, the null hypothesis either will or will not be rejected as a viable possibility in favour of the alternative hypothesis.
 \end{itemize}
 
-\end{frame}
+
 
 
 
 %--------------------------------------------------------------------------------------------------------------------------%
-\begin{frame}
-\frametitle{The Null Hypothesis }
+
+\noindent \textbf{The Null Hypothesis }
 \large
 \begin{itemize}
 \item The null hypothesis is what the experimenter supposes the outcome before the test is performed, based on prior assumptions (note:  future remarks on the Dice experiment will be based on this view).
 \item An alternative view is that the null hypothesis is often the reverse of what the experimenter actually believes; it is put forward to allow the data to contradict it. \item In a hypothetical experiment on the effect of sleep deprivation, the experimenter probably expects sleep deprivation to have a harmful effect. \item If the experimental data show a sufficiently large effect of sleep deprivation, then the null hypothesis, expressing that sleep deprivation has no effect, can be rejected.
 \end{itemize}
-\end{frame}
+
 
 
 %--------------------------------------------------------------------------------------------------------------------------%
-\begin{frame}
-\frametitle{The Null Hypothesis }
+
+\noindent \textbf{The Null Hypothesis }
 \large
 \begin{itemize}
 \item Hypothesis tests are almost always performed using null-hypothesis tests.
@@ -218,11 +218,11 @@ The critical region of a hypothesis test is the set of all outcomes which, if th
 \item That is to say, cause the null hypothesis to be rejected in favour of the alternative hypothesis.
 % \item (Remark: Selecting a suitable critical region is arbitrary (for later) ).
 \end{itemize}
-\end{frame}
+
 
 %----------------------------------------------------------------------------------------------------%
-\frame{
-\frametitle{Writing the Null Hypothesis}
+{
+\noindent \textbf{Writing the Null Hypothesis}
 %In statistics, a hypothesis is a claim or statement made around a property of a population.
 %A hypothesis test (also called a test of significance) is a standard procedure for testing a claim about that %property.
 \begin{itemize}
@@ -232,8 +232,8 @@ The critical region of a hypothesis test is the set of all outcomes which, if th
 \end{itemize}
 }
 %----------------------------------------------------------------------------------------------------%
-\frame{
-\frametitle{Writing the Null Hypothesis}
+{
+\noindent \textbf{Writing the Null Hypothesis}
 Simple examples of null hypothesis ( disregard context for the time being ):
 \begin{itemize}
 \item $H_0$:  $\mu = 350$. Population mean is 350.
@@ -245,8 +245,8 @@ Simple examples of null hypothesis ( disregard context for the time being ):
 }
 
 %--------------------------------------------------------------------------------------------------------------------------%
-\begin{frame}
-\frametitle{Writing the Null Hypothesis (Dice Example)}
+
+\noindent \textbf{Writing the Null Hypothesis (Dice Example)}
 
 \begin{itemize}
 \item Recall our experiment of throwing a dice 100 times and computing the result, performed using a fair die and a crooked die.
@@ -254,11 +254,11 @@ Simple examples of null hypothesis ( disregard context for the time being ):
     \item We expect a result close to 350. This can be our null hypothesis.
 \item We will write this as $H_0$:  $\mu = 350$. The die is fair.
 \end{itemize}
-\end{frame}
+
 
 %----------------------------------------------------------------------------------------------------%
-\frame{
-\frametitle{Writing the Alternative Hypothesis}
+{
+\noindent \textbf{Writing the Alternative Hypothesis}
 %In statistics, a hypothesis is a claim or statement made around a property of a population.
 %A hypothesis test (also called a test of significance) is a standard procedure for testing a claim about that %property.
 \begin{itemize}
@@ -269,8 +269,8 @@ Simple examples of null hypothesis ( disregard context for the time being ):
 \end{itemize}
 }
 %----------------------------------------------------------------------------------------------------%
-\frame{
-\frametitle{Writing the Alternative Hypothesis}
+{
+\noindent \textbf{Writing the Alternative Hypothesis}
 Simple examples of Alternative hypothesis ( based on previous example ):
 \begin{itemize}
 \item $H_0$:  $\mu = 350$.  Therefore  $H_1$:  $\mu \neq 350$. (Die Throws Example)
@@ -282,8 +282,8 @@ Remember to provide a brief written description for both hypotheses.
 }
 
 %----------------------------------------------------------------------------------------------------%
-\frame{
-\frametitle{Number of Tails (For Later) }
+{
+\noindent \textbf{Number of Tails (For Later) }
 
 \begin{itemize}
 \item The alternative hypothesis indicates the number of tails.
@@ -295,17 +295,17 @@ Remember to provide a brief written description for both hypotheses.
 
 
 %--------------------------------------------------------------------------------------------------------------------------%
-\begin{frame}
-\frametitle{Significance Level}
+
+\noindent \textbf{Significance Level}
 
 \begin{itemize}
 \item In hypothesis testing, the significance level $\alpha$ is the criterion used for rejecting the null hypothesis. \item The significance level is used in hypothesis testing as follows: First, the difference between the results of the experiment and the null hypothesis is determined.(i.e. Observed - Null). \item Then, assuming the null hypothesis is true, the probability of a difference that large or larger is computed . \item Finally, this probability is compared to the significance level.\item  If the probability is less than or equal to the significance level, then the null hypothesis is rejected and the outcome is said to be statistically significant.
 \end{itemize}
-\end{frame}
+
 
 %--------------------------------------------------------------------------------------------------------------------------%
-\begin{frame}
-\frametitle{Hypothesis Testing}
+
+\noindent \textbf{Hypothesis Testing}
 The inferential step to conclude that the null hypothesis is false goes as follows: The data (or data more extreme) are very unlikely given that the null hypothesis is true.
 \bigskip
 This means that:
@@ -315,33 +315,33 @@ This means that:
 \end{itemize}
 \bigskip
 The inference usually made is that the null hypothesis is false. Importantly it doesn't prove the null hypothesis to be false.
-\end{frame}
+
 %--------------------------------------------------------------------------------------------------------------------------%
 
 
-\begin{frame}
-\frametitle{Significance (Dice Example)}
+
+\noindent \textbf{Significance (Dice Example)}
 \begin{itemize}
 \item Suppose that the outcome of the die throw experiment was a sum of 401. In previous lectures, a simulation study found that only in approximately $1.75\%$ of cases would a fair die yield this result.
 \item However, in the case of a crooked die (i.e. one that favours high numbers) this result would not be unusual.
 \item A reasonable interpretation of this experiment is that the die is crooked, but importantly the experiment doesn't prove it one way or the other.
 \item We will discuss the costs of making a wrong decision later (Type I and Type II errors).
 \end{itemize}
-\end{frame}
+
 %--------------------------------------------------------------------------------------------------------------------------%
 %Slide 18
-\begin{frame}
-\frametitle{Significance Level $\alpha$}
+
+\noindent \textbf{Significance Level $\alpha$}
 
 \begin{itemize}
 \item Traditionally, experimenters have used either the 0.05 level (sometimes called the 5\% level) or the 0.01 level (1\% level), although the choice of levels is largely subjective.  \item The lower the significance level, the more the data must diverge from the null hypothesis to be significant. \item Therefore, the 0.01 level is more conservative than the 0.05 level. \item The Greek letter alpha ($\alpha$) is sometimes used to indicate the significance level. \item We will use a significance level of $\alpha =0.05$ only in this module. You may assume this level unless clearly stated otherwise
 \end{itemize}
-\end{frame}
+
 
 %--------------------------------------------------------------------------------------------------------------------------%
 %Slide 19
-\begin{frame}
-\frametitle{Hypothesis Testing and p-values}
+
+\noindent \textbf{Hypothesis Testing and p-values}
 \begin{itemize}
 \item In hypothesis tests, the difference between the observed value and the parameter value specified by $H_0$ is computed and the probability of obtaining a difference this large or large is calculated.
 \item The probability of obtaining data as extreme, or more extreme, than the expected value under the null hypothesis is called the \textbf{\emph{p-value}}.
@@ -349,12 +349,12 @@ The inference usually made is that the null hypothesis is false. Importantly it 
 \item Thus, if the probability value is $0.0175$, this does not mean that the probability that the null hypothesis is either true or false is $0.0175$.
 \item It means that the probability of obtaining data as different or more different from the null hypothesis as those obtained in the experiment is $0.0175$.
 \end{itemize}
-\end{frame}
+
 
 %---------------------------------------------------------------------------------------------%
 
-\frame{
-\frametitle{Significance Level}
+{
+\noindent \textbf{Significance Level}
 
 \begin{itemize}
 \item The significance level of a statistical hypothesis test is a fixed probability of wrongly rejecting the null hypothesis $H_0$, if it is in fact true.
@@ -367,8 +367,8 @@ The inference usually made is that the null hypothesis is false. Importantly it 
 
 %--------------------------%
 
-\begin{frame}
-\frametitle{The Hypothesis Testing Procedure }
+
+\noindent \textbf{The Hypothesis Testing Procedure }
 We will use both of the following four step procedures for hypothesis testing. The level of significance must be determined in advance. The first procedures is as follows:
 
 \begin{itemize}
@@ -377,12 +377,12 @@ We will use both of the following four step procedures for hypothesis testing. T
 \item Compute the $p$-value for that test statistic.
 \item Make a decision based on the $p$-value.
 \end{itemize}
-\end{frame}
+
 
 %--------------------------%
 
-\begin{frame}
-\frametitle{The Hypothesis Testing Procedure }
+
+\noindent \textbf{The Hypothesis Testing Procedure }
 The second procedures is very similar to the first, but is more practicable for written exams, so we will use this one more. The first two steps are the same.
 
 \begin{itemize}
@@ -391,23 +391,23 @@ The second procedures is very similar to the first, but is more practicable for 
 \item Determine the \emph{\textbf{critical value}} (described shortly)
 \item Make a decision based on the critical value.
 \end{itemize}
-\end{frame}
-\begin{frame}
+
+
 
 %------------------------------------------------%
 
-\frametitle{Test Statistics}
+\noindent \textbf{Test Statistics}
 \begin{itemize}
 \item A test statistic is a quantity calculated from our sample of data. Its value is used to decide whether or not the null hypothesis should be rejected in our hypothesis test.
 \item The choice of a test statistic will depend on the assumed probability model and the hypotheses under question.
     \item The general structure of a test statistic is
 \[ \mbox{TS}  = {\mbox{Observed Value} - \mbox{Hypothesisd Value}  \over \mbox{Std. Error}}\]
 \end{itemize}
-\end{frame}
+
 %----------------------------------------------%
 % Slide 24
-\begin{frame}
-\frametitle{The Test Statistic (TS)}
+
+\noindent \textbf{The Test Statistic (TS)}
 \begin{itemize}
 
 \item In our dice experiment, we observed a value of 401. Under the null hypothesis, the expected value was 350.
@@ -416,13 +416,13 @@ The second procedures is very similar to the first, but is more practicable for 
 \item We will use the initials TS for the sake of brevity.
 \item The test statistic is therefore \[ \mbox{TS}  = {401 - 350  \over 17.07} = 2.99 \]
 \end{itemize}
-\end{frame}
+
 
 %--------------------------%
 
 
-\begin{frame}
-\frametitle{The Critical Value (CV)}
+
+\noindent \textbf{The Critical Value (CV)}
 
 
 \begin{itemize}
@@ -432,13 +432,13 @@ The second procedures is very similar to the first, but is more practicable for 
 \item The critical value is determined the exact same way as quantiles for confidence intervals.
 
 \end{itemize}
-\end{frame}
+
 
 %--------------------------%
 
 
-\begin{frame}
-\frametitle{One Tailed Hypothesis test}
+
+\noindent \textbf{One Tailed Hypothesis test}
 \begin{itemize}
 \item A one-sided test is a statistical hypothesis test in which the values for which we can reject the null hypothesis, $H_0$ are located entirely in one tail of the probability distribution.
 
@@ -449,11 +449,11 @@ The second procedures is very similar to the first, but is more practicable for 
 \item A rule of thumb is to consider the alternative hypothesis.  If only one alternative is offered by $H_1$ (i.e. a $``<"$ or a $``>"$ is present, then it is a one tailed test.)
 
 \end{itemize}
-\end{frame}
 
 
-\begin{frame}
-\frametitle{Two Tailed Hypothesis test}
+
+
+\noindent \textbf{Two Tailed Hypothesis test}
 \begin{itemize}
 \item
 A two-sided test is a statistical hypothesis test in which the values for which we can reject the null hypothesis, H0 are located in both tails of the probability distribution.
@@ -463,26 +463,26 @@ A two-sided test is a statistical hypothesis test in which the values for which 
 \item A two-sided test is also referred to as a two-tailed test of significance.
 \item A rule of thumb is to consider the alternative hypothesis.  If only one alternative is offered by $H_1$ (i.e. a $`\neq'$ is present, then it is a two tailed test.)
 \end{itemize}
-\end{frame}
+
 
 
 %--------------------------%
 
 
-\begin{frame}
-\frametitle{Determining the Critical value}
+
+\noindent \textbf{Determining the Critical value}
 \begin{itemize} \item The critical value for a hypothesis test is a threshold to which the value of the test statistic in a sample is compared to determine whether or not the null hypothesis is rejected.
 
 \item The critical value for any hypothesis test depends on the significance level at which the test is carried out, and whether the test is one-sided or two-sided.
 \end{itemize}
-\end{frame}
+
 
 
 %--------------------------%
 
 
-\begin{frame}
-\frametitle{Determining the Critical value}
+
+\noindent \textbf{Determining the Critical value}
 \begin{itemize}
 \item A pre-determined level of significance $\alpha$ must be specified. Usually it is set at 5\% (0.05).
 \item The number of tails must be known. (For later - One tailed or two tailed : $k$ is either 1 or 2).
@@ -490,23 +490,23 @@ A two-sided test is a statistical hypothesis test in which the values for which 
 \item The manner by which we compute critical value is identical to the way we compute quantiles.We will consider this in more detail during tutorials.
 \item For the time being we will use 1.96 as a critical value.
 \end{itemize}
-\end{frame}
+
 
 %------------------------------------------%
 
-\begin{frame}
-\frametitle{Decision Rule:  The Critical Region}
+
+\noindent \textbf{Decision Rule:  The Critical Region}
 \begin{itemize}
 \item The critical region CR (or rejection region RR) is a set of values of the test statistic for which the null hypothesis is rejected in a hypothesis test. \item That is, the sample space for the test statistic is partitioned into two regions; one region (the critical region) will lead us to reject the null hypothesis $H_0$, the other will not.
 
 \item A test statistic is in the critical region if the absolute value of the test statistic is greater than the critical value.
     \item So, if the observed value of the test statistic is a member of the critical region, we conclude ``Reject $H_0$"; if it is not a member of the critical region then we conclude "Do not reject $H_0$".
 \end{itemize}
-\end{frame}
 
 
-\begin{frame}
-\frametitle{Critical Region}
+
+
+\noindent \textbf{Critical Region}
 \begin{itemize}
 
 \item $|TS| > CV$ Then we reject null hypothesis.
@@ -516,12 +516,12 @@ A two-sided test is a statistical hypothesis test in which the values for which 
 \item Here $|2.99| > 1.96$ we reject the null hypothesis that the die is fair.
 \item Consider this in the context of proof.
 \end{itemize}
-\end{frame}
+
 
 %--------------------------%
 
-\begin{frame}
-\frametitle{Performing a Hypothesis test}
+
+\noindent \textbf{Performing a Hypothesis test}
 To summarize: a hypothesis test can be considered as a four step process
 \begin{itemize}
 \item Formally writing out the null and alternative hypothesis.
@@ -529,36 +529,36 @@ To summarize: a hypothesis test can be considered as a four step process
 \item Determining the critical value.
 \item Using the decision rule.
 \end{itemize}
-\end{frame}
+
 
 \end{document}
 
 %--------------------------------------------------------------------------------------------------------------------------%
-\begin{frame}
-\frametitle{p-values}
+
+\noindent \textbf{p-values}
 \begin{itemize}
 \item He or she would have no more basis to doubt the validity of the null hypothesis than if p-value had been 0.482. The conclusion would be that the null hypothesis could not be rejected at the 0.05 level. \item In short, this approach is to specify the significance level in advance and use p-value only to determine whether or not the null hypothesis can be rejected at the stated significance level.
 \item
 Many statisticians and researchers find this approach to hypothesis testing not only too rigid, but basically illogical. It is very reasonable to  have more confidence that the null hypothesis is false with a p-value of 0.0001 then with a p-value of 0.042?
 \end{itemize}
-\end{frame}
+
 
 
 %--------------------------------------------------------------------------------------------------------------------------%
-\begin{frame}
-\frametitle{p-values}
+
+\noindent \textbf{p-values}
 \begin{itemize}
 \item The less likely the obtained results (or more extreme results) under the null hypothesis, the more confident one should be that the null hypothesis is false. \item The null hypothesis should not be rejected once and for all. The possibility that it was falsely rejected is always present, and, all else being equal, the lower the p-value, the lower this possibility.
 \item According to this view, research reports should not contain the p-value, only whether or not the values were significant (at or below the significance level).
 \item
 However it is much more reasonable to just report the p-values. That way each reader can make up his or her mind about just how convinced they are that the null hypothesis is false.
 \end{itemize}
-\end{frame}
+
 
 %--------------------------------------------------------------------------------------------------------------------------%
 
-\frame{
-\frametitle{p-value}
+{
+\noindent \textbf{p-value}
 \begin{itemize}
 \item The p-value (or p-value or probability value is the probability of getting a value of the test statistic that is at least as extreme as the one representing the sample data, assuming the null hypothesis is true.
 \item The null hypothesis is rejected if the P-value is very small, such as less than 0.05.
@@ -572,18 +572,18 @@ However it is much more reasonable to just report the p-values. That way each re
 
 
 %--------------------------------------------------------------------------------------------------------------------------%
-\begin{frame}
-\frametitle{p-values}
+
+\noindent \textbf{p-values}
 \large
 \begin{itemize}
 \item The null hypothesis either is or is not rejected at the previously stated significance level. Thus, if an experimenter originally stated that he or she was using the $\alpha = 0.05$ significance level and p-value was subsequently calculated to be $0.042$, then the person would reject the null hypothesis at the 0.05 level. \item If p-value had been 0.0001 instead of 0.042 then the null hypothesis would still be rejected at the 0.05 significance level.  \item
 The experimenter would not have any basis to be more confident that the null hypothesis was false with a p-value of 0.0001 than with a p-value of 0.041. \item Similarly, if the p had been 0.051 then the experimenter would fail to reject the null hypothesis
 \end{itemize}
 
-\end{frame}
+
 %---------------------------------------------------------------------------------------------%
-\frame{
-\frametitle{Critical value}
+{
+\noindent \textbf{Critical value}
 A critical value is any value that separates the critical region ( where we reject the null hypothesis) for that values of the test statistic that do not lead to a rejection of the null hypothesis.
 
 }
@@ -595,8 +595,8 @@ A critical value is any value that separates the critical region ( where we reje
 
 %----------------------------------------------------------------------------------------------------%
 
-\frame{
-\frametitle{Conclusions in hypothesis testing}
+{
+\noindent \textbf{Conclusions in hypothesis testing}
 \begin{itemize}
 \item We always test the null hypothesis.
 \item We reject the null hypothesis, or
@@ -604,32 +604,32 @@ A critical value is any value that separates the critical region ( where we reje
 \end{itemize}
 }
 %---------------------------------------------------------------------------%
-\begin{frame}
-\frametitle{Types of Error}
+
+\noindent \textbf{Types of Error}
 \begin{itemize}
 \item The probability of a Type I error is designated by the Greek letter alpha ( $\alpha$) and is called the Type I error rate.
 \item The probability of a Type II error (the Type II error rate) is designated by the Greek letter beta ( $\beta$ ).
 \item A Type II error is only an error in the sense that an opportunity to reject the null hypothesis correctly was lost.
 \item It is not an error in the sense that an incorrect conclusion was drawn since no conclusion is drawn when the null hypothesis is not rejected.
 \end{itemize}
-\end{frame}
+
 %---------------------------------------------------------------------------------------------%
 
 
 
 
-\begin{frame}
-\frametitle{Type I and Type II Error}
+
+\noindent \textbf{Type I and Type II Error}
 \begin{itemize}
 \item
 \item
 \item A type II error would occur if it was concluded that the two drugs produced the same effect, i.e. there is no difference between the two drugs on average, when in fact they produced different ones.
 \item A type II error is frequently due to sample sizes being too small.
 \end{itemize}
-\end{frame}
+
 %---------------------------------------------------------------------------%
-\begin{frame}
-\frametitle{Types of Error}
+
+\noindent \textbf{Types of Error}
 \begin{itemize}
 \item
 A Type I error, on the other hand, is an error in every sense of the word. A conclusion is drawn that the null hypothesis is false when, in fact, it is true. Therefore, Type I errors are generally considered more serious than Type II errors.
@@ -640,11 +640,11 @@ Requiring very strong evidence to reject the null hypothesis makes it very unlik
 \item
 The Type I error rate is almost always set at .05 or at .01, the latter being more conservative since it requires stronger evidence to reject the null hypothesis at the .01 level then at the .05 level.
 \end{itemize}
-\end{frame}
+
 
 %---------------------------------------------------------------------------%
-\begin{frame}
-\frametitle{Type I and II errors}
+
+\noindent \textbf{Type I and II errors}
 There are two kinds of errors that can be made in hypothesis testing:
 \begin{itemize}
 \item[(1)] a true null hypothesis can be incorrectly rejected
@@ -656,11 +656,11 @@ The former error is called a Type I error and the latter error is called a Type 
 The probability of Type I error is always equal to the level of significance that is used as the standard for rejecting
 the null hypothesis; it is designated by the lowercase Greek $\alpha$ (alpha).
 
-\end{frame}
+
 
 
 %---------------------------------------------------------------------------%
-\begin{frame}
+
 These two types of errors are defined in the table below.
 
 \begin{center}
@@ -672,12 +672,12 @@ Decision: Do not Reject H0	& Correct 	&Type II error\\ \hline
 \end{tabular}
 \end{center}
 
-\end{frame}
+
 
 
 %--------------------------------------------------------------------------------------------------------------------------%
-\begin{frame}
-\frametitle{Hypothesis Testing}
+
+\noindent \textbf{Hypothesis Testing}
 \large
 The inferential step to conclude that the null hypothesis is false goes as follows: The data (or data more extreme) are very unlikely given that the null hypothesis is true.
 \bigskip
@@ -685,10 +685,10 @@ This means that:
 \begin{itemize}\item [(1)] a very unlikely event occurred or
 \item[(2)] the null hypothesis is false. \end{itemize}
 The inference usually made is that the null hypothesis is false. Importantly it doesn’t prove the null hypothesis to be false.
-\end{frame}
+
 %-------------------------------------------------------------------------------------------------------------------------%
-\begin{frame}
-\frametitle{Type I and II errors}
+
+\noindent \textbf{Type I and II errors}
 \large
 There are two kinds of errors that can be made in hypothesis testing:
 \begin{itemize}
@@ -697,20 +697,20 @@ There are two kinds of errors that can be made in hypothesis testing:
 \end{itemize}
 The former error is called a \textbf{\emph{Type I error}} and the latter error is called a \textbf{\emph{Type II error}}. \\ \bigskip
 The probability of Type I error is always equal to the level of significance $\alpha$ (alpha) that is used as the standard for rejecting the null hypothesis .
-\end{frame}
+
 %---------------------------------------------------------------------------%
-\begin{frame}
-\frametitle{Type II Error}
+
+\noindent \textbf{Type II Error}
 \begin{itemize}
 
 \item The probability of a Type II error is designated by the Greek letter beta ( $\beta$).
 \item A Type II error is only an error in the sense that an opportunity to reject the null hypothesis correctly was lost.
 \item It is not an error in the sense that an incorrect conclusion was drawn since no conclusion is drawn when the null hypothesis is not rejected.
 \end{itemize}
-\end{frame}
+
 %---------------------------------------------------------------------------%
-\begin{frame}
-\frametitle{Types of Error}
+
+\noindent \textbf{Types of Error}
 \large
 \begin{itemize}
 \item
@@ -718,10 +718,10 @@ A Type I error, on the other hand, is an error in every sense of the word. A con
 \item
 The probability of a Type I error ($\alpha$ ) is set by the experimenter. \item There is a trade-off between Type I and Type II errors. The more an experimenter protects himself or herself against Type I errors by choosing a low level, the greater the chance of a Type II error.
 \end{itemize}
-\end{frame}
+
 %---------------------------------------------------------------------------%
-\begin{frame}
-\frametitle{Types of Error}
+
+\noindent \textbf{Types of Error}
 \large
 \begin{itemize}
 \item
@@ -729,31 +729,31 @@ Requiring very strong evidence to reject the null hypothesis makes it very unlik
 \item
 The Type I error rate is almost always set at .05 or at .01, the latter being more conservative since it requires stronger evidence to reject the null hypothesis at the .01 level then at the .05 level.
 \end{itemize}
-\end{frame}
+
 
 
 
 %----------------------------------------------------------------------------------------------------%
-\begin{frame}
-\frametitle{Type I and Type II errors - Die Example}
+
+\noindent \textbf{Type I and Type II errors - Die Example}
 \begin{itemize}
 \item Recall our die throw experiment example.
 \item Suppose we perform the experiment twice with two different dice.
 \item We don't not know for sure whether or not either of the dice is fair or crooked (favouring high values).
 \item Suppose we get a sum of 401 from one die, and 360 from the other.
 \end{itemize}
-\end{frame}
+
 
 %----------------------------------------------------------------------------------------------------%
-\begin{frame}
-\frametitle{Type I and Type II errors - Die Example}
+
+\noindent \textbf{Type I and Type II errors - Die Example}
 \begin{itemize}
 \item For our first dice (sum 401), we feel that it is likely that the die is crooked.
 \item A Type I error describes the case when in fact that dice was fair, and what happened was just an unusual result.
 \item For our second dice (sum 360), we feel that it is likely that the die is fair.
 \item A Type II error describes the case when in fact that dice was crooked , favouring high values, and what happened was ,again, just an unusual result.
 \end{itemize}
-\end{frame}
+
 
 
 

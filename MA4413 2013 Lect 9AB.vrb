@@ -1,8 +1,0 @@
-\frametitle {Example 2: Difference in Means (e) }
-\vspace{-1cm}
-\begin{itemize}
-\item As the sample was large, we could use $CV = 1.96$ (as always, two tailed procedure, with $\alpha=0.05$).
-
-\item \textbf{Decision Rule}: Is the $TS > CV$ ? \\  Is $2.65 > 1.96$ ? - Yes , we reject the null hypothesis.
-\item There is enough evidence to suggest that there is a difference in drug treatments.
-\end{itemize}

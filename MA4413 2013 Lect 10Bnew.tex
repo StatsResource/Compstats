@@ -29,16 +29,16 @@
 %----------------------------------------------------------------------------------------------------------%
 \begin{document}
 
-\begin{frame}
+
 \titlepage
-\end{frame}
 
-\begin{frame}
-\frametitle{Inference Procedures with \texttt{R}}
-\end{frame}
 
-\begin{frame}
-\frametitle{The paired t-test with \texttt{R}}
+
+\noindent \textbf{Inference Procedures with \texttt{R}}
+
+
+
+\noindent \textbf{The paired t-test with \texttt{R}}
 \vspace{-1cm}
 \begin{itemize}
 \item Previously we have seen the paired $t-$test. It is used to determine whether or
@@ -49,13 +49,13 @@ the case-wise differences are zero.
 %\item The test statistic is computed as
 %\[ TS = \frac{\bar{d} - \mu_d}{\frac{s_d}{\sqrt{n}}} \]
 \end{itemize}
-\end{frame}
+
 
 
 
 %------------------------------------------%
-\begin{frame}[fragile]
-\frametitle{The paired t-test with \texttt{R}}
+[fragile]
+\noindent \textbf{The paired t-test with \texttt{R}}
 %Alternative Approach : using p-values.
 \begin{itemize}
 \item Conclusions about all inference procedures can be made based on the $p-$values.
@@ -65,10 +65,10 @@ the case-wise differences are zero.
 \item The user then interprets the $p-$values. If $p-$value is small, reject the null hypothesis. If the p-value is large, the appropriate conclusion is a failure to reject $H_0$.
 \item The threshold for being considered small is less than $\alpha/k$, usually 0.0250. \\ (This is actually a very arbitrary choice of threshold, suitable for some subject areas, not for others.)
 \end{itemize}
-\end{frame}
+
 %------------------------------------------%
-\begin{frame}[fragile]
-\frametitle{The paired t-test with \texttt{R}}
+[fragile]
+\noindent \textbf{The paired t-test with \texttt{R}}
 
 \begin{itemize}
 \item In the following procedure (next slide), there are two sets of values: the \texttt{Before} values and the \texttt{After} values.
@@ -76,10 +76,10 @@ the case-wise differences are zero.
 \item The alternative hypothesis is specified in the output. ( Another way of expressing it: True mean of case-wise differences is not zero)
 \item Also included in the output is a 95\% confidence interval for the sample mean of case-wise differences.
 \end{itemize}
-\end{frame}
+
 %------------------------------------------%
-\begin{frame}[fragile]
-\frametitle{The paired t-test with \texttt{R}}
+[fragile]
+\noindent \textbf{The paired t-test with \texttt{R}}
 Implementing the paired t-test using \texttt{R} for the example previously discussed.
 \begin{verbatim}
 > t.test(Before,After,paired=TRUE)
@@ -96,21 +96,21 @@ mean of the differences
                8.214286
 
 \end{verbatim}
-\end{frame}
+
 
 %-------------------------------------------------%
-\begin{frame}[fragile]
-\frametitle{The paired t-test with \texttt{R}}
+[fragile]
+\noindent \textbf{The paired t-test with \texttt{R}}
 \begin{itemize}
 \item The p-value ($0.001868$) is less than the threshold is less than the threshold $0.0250$.
 \item We reject the null hypothesis (mean of case-wise differences being zero, i.e. expect no difference between ``before" and ``after").
 \item We conclude that there is a likely to be a difference between `before' and `after' measurements.
 \item That is to say, we can expected a difference between two paired measurements.
 \end{itemize}
-\end{frame}
+
 %-------------------------------------------------%
-\begin{frame}[fragile]
-\frametitle{The paired t-test with \texttt{R}}
+[fragile]
+\noindent \textbf{The paired t-test with \texttt{R}}
 \begin{itemize}
 \item We could also consider the confidence interval. We are $95\%$ confident that the expected value of the case-wise difference is at least 3.65.
 \item Here the null value (i.e. 0) is not within the range of the confidence limits.
@@ -124,15 +124,15 @@ mean of the differences
   3.650075 12.778496
 ...
 \end{verbatim}
-\end{frame}
+
 
 
 
 %----------------------------------------%
 
-\begin{frame}
 
-\frametitle{Test for Equality of Variance}
+
+\noindent \textbf{Test for Equality of Variance}
 \begin{itemize}
 \item In this procedure, we determine whether or not two populations have the same variance.
 \item The assumption of equal variance of two populations underpins several inference procedures. 
@@ -142,10 +142,10 @@ mean of the differences
 \[ H_1: \sigma^2_1 \neq \sigma^2_2 \]
 \end{itemize}
 
-\end{frame}
+
 %----------------------------------------%
-\begin{frame}
-\frametitle{Test for Equality of Variance}
+
+\noindent \textbf{Test for Equality of Variance}
 \begin{itemize}
 \item When using \texttt{R} it would be convenient to consider the null and alternative in terms of variance ratios.
 \item Two data sets have equal variance if the variance ratio is 1.
@@ -153,13 +153,13 @@ mean of the differences
 
 \[ H_0: \sigma^2_1 / \sigma^2_2 = 1 \]
 \[ H_1: \sigma^2_1 / \sigma^2_2 \neq 1 \]
-\end{frame}
+
 %----------------------------------------%
 % - x=c(14,13,16,20,12,18,11,09,13,11)
 % - y=c(15,13,18,20,10,17,23,11,10)
 %----------------------------------------%
-\begin{frame}[fragile]
-\frametitle{Test for Equality of Variance}
+[fragile]
+\noindent \textbf{Test for Equality of Variance}
 % You would be required to compute the test statistic for this procedure.
 The test statistic is the ratio of the variances for both data sets.
 \[ TS = \frac{s^2_x}{s^2_y} \]
@@ -170,10 +170,10 @@ The standard deviations are provided in the \texttt{R} code. \begin{itemize}
 To compute the test statistic.
 \[ TS = \frac{3.40^2}{4.63^2} = \frac{11.56}{21.43} = 0.5394 \]
 
-\end{frame}
+
 %----------------------------------------%
-\begin{frame}[fragile]
-\frametitle{Test for Equality of Variance}
+[fragile]
+\noindent \textbf{Test for Equality of Variance}
 \begin{verbatim}
 > var.test(x,y)
 
@@ -190,25 +190,25 @@ ratio of variances
          0.5393782
 \end{verbatim}
 
-\end{frame}
+
 %----------------------------------------%
 
-\begin{frame}
-\frametitle{Test for Equality of Variance}
+
+\noindent \textbf{Test for Equality of Variance}
 \begin{itemize}
 \item The $p-$value is 0.3764 (top right), above the threshold level of 0.0250.
 \item We fail to reject the null hypothesis.
 \item We can assume that there is no significant difference in sample variances. Therefore we can assume that both populations have equal variance.
 \item Additionally the $95\%$ confidence interval (0.1237, 2.2125) contains the expected value under the assumption of equal variance i.e. 1.
 \end{itemize}
-\end{frame}
+
 
 
 %-------------------------------------------------%
 
 
-\begin{frame}
-\frametitle{Shapiro-Wilk Test for Normality}
+
+\noindent \textbf{Shapiro-Wilk Test for Normality}
 
 
 \begin{itemize}
@@ -219,10 +219,10 @@ ratio of variances
 \item One procedure for testing these hypotheses is the Shapiro-Wilk test, implemented in \texttt{R} using the command \texttt{shapiro.test()}.
 %\item (Remark: You will not be required to compute the test statistic for this test.)
 \end{itemize}
-\end{frame}
+
 %----------------------------------------%
-\begin{frame}[fragile]
-\frametitle{Shapiro-Wilk Test for Normality}
+[fragile]
+\noindent \textbf{Shapiro-Wilk Test for Normality}
 For the data set used previously; $x$ and $y$, we use the Shapiro-Wilk test to determine that both data sets are normally distributed.
 (Both data sets can be assumed to be normally distributed, based on these values.)
 \begin{verbatim}
@@ -240,12 +240,12 @@ data:  y
 W = 0.9347, p-value = 0.5273
 \end{verbatim}
 
-\end{frame}
+
 
 
 %-------------------------------------------------%
-\begin{frame}[fragile]
-\frametitle{Graphical Procedures for assessing Normality}
+[fragile]
+\noindent \textbf{Graphical Procedures for assessing Normality}
 
 \begin{itemize}
 \item The normal probability (Q-Q) plot is a very useful tool for determining whether or not a data set is normally distributed.
@@ -259,20 +259,20 @@ W = 0.9347, p-value = 0.5273
 >qqline(CWdiff)
 \end{verbatim}
 
-\end{frame}
+
 
 %-------------------------------------------------%
 
-\begin{frame}
-\frametitle{Graphical Procedures for Assessing Normality}
+
+\noindent \textbf{Graphical Procedures for Assessing Normality}
 
 \begin{center}
 \includegraphics[scale=0.32]{10AQQplot}
 \end{center}
-\end{frame}
+
 %----------------------------------------------------------%
-\begin{frame}[fragile]
-\frametitle{Grubbs Test for Determining an Outlier}
+[fragile]
+\noindent \textbf{Grubbs Test for Determining an Outlier}
 
 \begin{itemize}
 \item The Grubbs test is used to determine if there is exactly one outlier in a complete data set.
@@ -281,11 +281,11 @@ W = 0.9347, p-value = 0.5273
 \item There is no agreed formal definition for an outlier. The definition of outlier used for this procedure is a value that unusually distance from the rest of the values.
 \item (For the sake of clarity , we shall call this type of outlier a \textbf{Grubbs Outlier}). 
 \end{itemize}
-\end{frame}
+
 
 %-------------------------------------------------%
-\begin{frame}[fragile]
-\frametitle{Grubbs Test for Determining an Outlier}
+[fragile]
+\noindent \textbf{Grubbs Test for Determining an Outlier}
 Consider the following data set: is the lowest value (4.01) an outlier?
 \begin{verbatim}
       6.98 8.49 7.97 6.64
@@ -295,11 +295,11 @@ Consider the following data set: is the lowest value (4.01) an outlier?
 
 Under the null hypothesis, there is no outlier present in the data set. 
 We reject this hypothesis if the $p-$value is sufficiently small.
-\end{frame}
+
 
 %-------------------------------------------------%
-\begin{frame}[fragile]
-\frametitle{Grubbs Test for Determining an Outlier}
+[fragile]
+\noindent \textbf{Grubbs Test for Determining an Outlier}
 \vspace{-1cm}
 \begin{verbatim}
 > grubbs.test(x, two.sided=T)
@@ -309,15 +309,15 @@ G = 2.4093, U = 0.4243, p-value = 0.05069
 alternative hypothesis: lowest value 4.01 is an outlier
 \end{verbatim}
 We conclude that while small by comparison to the other values, the lowest value 4.01 is not an outlier.
-\end{frame}
+
 
 \end{document}
 
 
 %-------------------------------------------------%
 %-------------------------------------------------%
-\begin{frame}[fragile]
-\frametitle{Single Sample Proportion Test (a)}
+[fragile]
+\noindent \textbf{Single Sample Proportion Test (a)}
 
 \begin{itemize}
 \item In this procedure, we determine whether or not we are are justified in assuming that the population proportion takes a certain value.
@@ -330,11 +330,11 @@ We conclude that while small by comparison to the other values, the lowest value
 \item Suppose we survey 65 students, with 50 replying that they had an iphone or android.
 \end{itemize}
 
-\end{frame}
+
 %-------------------------------------------------%
 
-\begin{frame}[fragile]
-\frametitle{Single Sample Proportion Test (b)}
+[fragile]
+\noindent \textbf{Single Sample Proportion Test (b)}
 
 \begin{verbatim}
 > prop.test(50,65,0.80)
@@ -351,10 +351,10 @@ sample estimates:
 0.7692308
 \end{verbatim}
 
-\end{frame}
 
-\begin{frame}[fragile]
-\frametitle{Single Sample Proportion Test (c)}
+
+[fragile]
+\noindent \textbf{Single Sample Proportion Test (c)}
 
 \begin{itemize}
 \item The p-value is above the threshold. Therefore we fail to reject the null hypothesis that the population proportion ($\pi$) is $80\%$.
@@ -365,11 +365,11 @@ sample estimates:
 \item Nonetheless, you would be required to show how it was calculated.
 \end{itemize}
 
-\end{frame}
+
 
 %-------------------------------------------------%
-\begin{frame}[fragile]
-\frametitle{Test of Equality for Two Sample Proportions (a)}
+[fragile]
+\noindent \textbf{Test of Equality for Two Sample Proportions (a)}
 The null hypothesis is that two populations have the same proportions for a particular characteristic.
 \[H_0 : \pi_1 = \pi_2 \]
 \[H_1 : \pi_1 \neq \pi_2 \]
@@ -380,24 +380,24 @@ The null hypothesis is that two populations have the same proportions for a part
 \item The difference in population proportions assumed under the null hypothesis is zero.
 \item (It is possible to specify a different null value, but we will not consider this in this module.)
 \end{itemize}
-\end{frame}
+
 
 %-------------------------------------------------%
-\begin{frame}
-\frametitle{Test of Equality for Two Sample Proportions (b)}
+
+\noindent \textbf{Test of Equality for Two Sample Proportions (b)}
 \begin{itemize}
 \item Consider a study where the proportion of Irish students who owned mobile devices, such as iphones and androids was compared to the corresponding proportion of French student.
 \item As before, $65$ Irish students were interviewed, with $50$ replying that they owned mobile devices.
 \item $90$ french students were interview, with 60 responding that they owned mobile devices.
 \item The test of equality of proportions is implemented on the next slide.
 \end{itemize}
-\end{frame}
+
 
 %-------------------------------------------------%
 
 
-\begin{frame}[fragile]
-\frametitle{Test of Equality for Two Sample Proportions (c)}
+[fragile]
+\noindent \textbf{Test of Equality for Two Sample Proportions (c)}
 Based on the p-value, we fail to reject the null hypothesis. There is not enough evidence to assume a difference in proportions. Also the expected difference assumed under the null hypothesis, i.e. 0, is contained in the confidence interval.
 \begin{verbatim}
 > prop.test(c(50,60),c(65,90))
@@ -413,9 +413,9 @@ sample estimates:
    prop 1    prop 2
 0.7692308 0.6666667
 \end{verbatim}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{Test of Equality for Two Sample Proportions (d)}
+
+[fragile]
+\noindent \textbf{Test of Equality for Two Sample Proportions (d)}
 \begin{itemize}
 \item You would be required to compute the differences in observed proportions.
 \item Additionally you will given the \texttt{R} code for one sample procedures. This may or may not be relevant for answering the question.
@@ -433,5 +433,5 @@ sample estimates:
 0.6666667
 \end{verbatim}
 
-\end{frame}
+
 \end{document}
