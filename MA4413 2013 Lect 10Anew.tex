@@ -1,39 +1,19 @@
-\documentclass[a4]{beamer}
-\usepackage{amssymb}
-\usepackage{graphicx}
-\usepackage{subfigure}
-\usepackage{newlfont}
-\usepackage{amsmath,amsthm,amsfonts}
-%\usepackage{beamerthemesplit}
-\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
-\usepackage{mathptmx} % Font Family
-\usepackage{helvet} % Font Family
-\usepackage{color}
-\mode<presentation> {
-\usetheme{Default} % was Frankfurt
-\useinnertheme{rounded}
-\useoutertheme{infolines}
-\usefonttheme{serif}
-%\usecolortheme{wolverine}
-% \usecolortheme{rose}
-\usefonttheme{structurebold}
-}
-\setbeamercovered{dynamic}
-\title[MA4413]{Statistics for Computing \\ {\normalsize MA4413 Lecture 10A}}
-\author[Kevin O'Brien]{Kevin O'Brien \\ {\scriptsize Kevin.obrien@ul.ie}}
-\date{Autumn Semester 2013}
-\institute[Maths \& Stats]{Dept. of Mathematics \& Statistics, \\ University \textit{of} Limerick}
+\documentclass[]{article}
 
-\renewcommand{\arraystretch}{1.5}
-%----------------------------------------------------------------------------------------------------------%
+\usepackage{amsmath}
+\usepackage{amssymb}
+%opening
+\title{}
+\author{}
+
 \begin{document}
 
-\begin{frame}
-\titlepage
-\end{frame}
+\maketitle
 
 
-\begin{frame}
+\section*{Question 1}
+
+
 Today's Class : Almost Completion of Inference Procedures
 \begin{itemize}
 \item One-tailed Hypothesis Testing Procedures
@@ -48,7 +28,7 @@ Next Class: A few more \texttt{R} procedures.
 %---------------------------- %
 % Part 1
 %---------------------------- %
-\begin{frame}
+
 \frametitle{One Tailed Inference Procedures}
 \begin{itemize}
 \item We will briefly look at one-tailed hypothesis.
@@ -76,7 +56,7 @@ Confidence Intervals are almost always two-tailed (in undergraduate statistics a
 
 
 
-\begin{frame}
+
 \frametitle{One Tailed Hypothesis test}
 \begin{itemize}
 
@@ -88,7 +68,7 @@ Confidence Intervals are almost always two-tailed (in undergraduate statistics a
 \end{itemize}
 \end{frame}
 
-\begin{frame}
+
 \frametitle{One Tailed Hypothesis test}
 \begin{itemize}
 
@@ -104,7 +84,7 @@ Confidence Intervals are almost always two-tailed (in undergraduate statistics a
 %---------------------------- %
 % Part 2
 %---------------------------- %
-\begin{frame}
+
 \frametitle{Binary Classification}
 \begin{itemize}
 \item A Binary classification procedure is a predictive approach used to classify cases as either one two possible outcomes.
@@ -114,7 +94,7 @@ Confidence Intervals are almost always two-tailed (in undergraduate statistics a
 
 
 \end{frame}
-\begin{frame}
+
 \frametitle{Binary Classification}
 Recall the possible outcomes of a hypothesis test procedure. In particular recall the two important types of error. Importantly the binary classification prediction procedure can yield wrong predictions.
 \begin{center}
@@ -129,7 +109,7 @@ null hypothesis & True negative  & False negative \\ \hline
 \end{center}
 \end{frame}
 %------------------------------------------------------%
-\begin{frame}
+
 \frametitle{Accuracy, Precision and Recall}
 Let us simplify the last table, and present it in the context of a binary prediction procedure.
 \begin{center}
@@ -142,7 +122,7 @@ Let us simplify the last table, and present it in the context of a binary predic
 \end{center}
 \end{frame}
 %------------------------------------------------------%
-\begin{frame}
+
 \frametitle{Accuracy, Precision and Recall}
 Important metrics for determining how usefulness of the prediction procedure are : Accuracy, Recall and Precision.
 \\
@@ -152,7 +132,7 @@ Accuracy, Precision and recall are defined as
 \[\mbox{Recall}=\frac{tp}{tp+fn} \]
 \end{frame}
 %------------------------------------------------------%
-\begin{frame}
+
 \frametitle{Accuracy, Precision and Recall}
 Another measure is the F-measure.
 The F measure is computed as
@@ -160,7 +140,7 @@ The F measure is computed as
 
 \end{frame}
 %------------------------------------------------------%
-\begin{frame}
+
 \frametitle{Questions}
 \begin{center}
 \begin{tabular}{|c|c|c|}
@@ -173,7 +153,7 @@ Positive Cases & FN: 35 & TP: 100 \\ \hline
 \end{center}
 \end{frame}
 %------------------------------------------------------%
-\begin{frame}
+
 \frametitle{Accuracy, Precision and Recall}
 
 With reference to the table above, compute each of the following appraisal metrics.
@@ -187,7 +167,7 @@ With reference to the table above, compute each of the following appraisal metri
 \end{multicols}
 \end{frame}
 %------------------------------------------------------%
-\begin{frame}
+
 \frametitle{Accuracy, Precision and Recall}
 \begin{itemize}
 \item Why is the accuracy value so high?
@@ -204,7 +184,7 @@ With reference to the table above, compute each of the following appraisal metri
 %---------------------------- %
 
 
-\begin{frame}
+
 \frametitle{\texttt{R }Programming Language}
 What is \texttt{R}?
 
@@ -227,7 +207,7 @@ algorithms
 www.cran.r-project.org
 \end{itemize}
 \end{frame}
-\begin{frame}
+
 \frametitle{p-values using \texttt{R}}
 \begin{itemize}
 \item In every inference procedure performed using \texttt{R}, a p-value is presented to the screen for the user to interpret.
@@ -242,7 +222,7 @@ failure to reject the null hypothesis.
 \end{frame}
 
 %---------%
-\begin{frame}
+
 \frametitle{Using Confidence Limits}
 \begin{itemize}
 \item Alternatively, we can use the confidence interval to make a decision on whether or not we should reject or fail to reject the null hypothesis.
@@ -253,7 +233,7 @@ failure to reject the null hypothesis.
 \end{frame}
 %------------------------------------------%
 
-\begin{frame}
+
 \frametitle{The paired t-test (a)}
 
 \begin{itemize}
@@ -269,7 +249,7 @@ the case-wise differences are zero.
 
 
 %------------------------------------------%
-\begin{frame}[fragile]
+[fragile]
 \frametitle{The Paired t-test (b)}
 \begin{itemize}
 \item The calculation is dependent on the case-wise differences.
@@ -280,7 +260,7 @@ the case-wise differences are zero.
 \end{frame}
 
 %------------------------------------------%
-\begin{frame}[fragile]
+[fragile]
 \frametitle{The paired t-test (c)}
 \begin{itemize}
 \item Observed Mean of Case-wise differences $\bar{d}$ = 8.21,
@@ -292,7 +272,7 @@ the case-wise differences are zero.
 \[ TS = \frac{\bar{d} - \mu_d}{\frac{s_d}{\sqrt{n}}} = \frac{8.21 - 0}{\frac{7.90}{\sqrt{14}}} = 3.881 \]
 \end{frame}
 %------------------------------------------%
-\begin{frame}[fragile]
+[fragile]
 \frametitle{The paired t-test (e)}
 
 \begin{itemize}
@@ -304,7 +284,7 @@ the case-wise differences are zero.
 
 \end{frame}
 %------------------------------------------%
-\begin{frame}[fragile]
+[fragile]
 \frametitle{The paired t-test (f)}
 Alternative Approach : using p-values.
 \begin{itemize}
@@ -316,7 +296,7 @@ Alternative Approach : using p-values.
 \end{itemize}
 \end{frame}
 %------------------------------------------%
-\begin{frame}[fragile]
+[fragile]
 \frametitle{The paired t-test (g)}
 Implementing the paired t-test using \texttt{R} for the example previously discussed.
 \begin{verbatim}
@@ -337,7 +317,7 @@ mean of the differences
 \end{frame}
 
 %-------------------------------------------------%
-\begin{frame}[fragile]
+[fragile]
 \frametitle{The paired t-test (h)}
 \begin{itemize}
 \item The p-value ($0.001868$) is less than the threshold is less than the threshold $0.0250$.
@@ -347,7 +327,7 @@ mean of the differences
 \end{itemize}
 \end{frame}
 %-------------------------------------------------%
-\begin{frame}[fragile]
+[fragile]
 \frametitle{The paired t-test (i)}
 \begin{itemize}
 \item We could also consider the confidence interval. We are $95\%$ confident that the expected value of the case-wise difference is at least 3.65.
@@ -368,7 +348,7 @@ mean of the differences
 
 %----------------------------------------%
 
-\begin{frame}
+
 
 \frametitle{Test for Equality of Variance (a)}
 \begin{itemize}
@@ -382,7 +362,7 @@ mean of the differences
 
 \end{frame}
 %----------------------------------------%
-\begin{frame}
+
 \frametitle{Test for Equality of Variance (b)}
 \begin{itemize}
 \item When using \texttt{R} it would be convenient to consider the null and alternative in terms of variance ratios.
@@ -396,7 +376,7 @@ mean of the differences
 % - x=c(14,13,16,20,12,18,11,09,13,11)
 % - y=c(15,13,18,20,10,17,23,11,10)
 %----------------------------------------%
-\begin{frame}[fragile]
+[fragile]
 \frametitle{Test for Equality of Variance(c)}
 You would be required to compute the test statistic for this procedure.
 The test statistic is the ratio of the variances for both data sets.
@@ -410,7 +390,7 @@ To compute the test statistic.
 
 \end{frame}
 %----------------------------------------%
-\begin{frame}[fragile]
+[fragile]
 \frametitle{Variance Test (d)}
 \begin{verbatim}
 > var.test(x,y)
@@ -431,7 +411,7 @@ ratio of variances
 \end{frame}
 %----------------------------------------%
 
-\begin{frame}
+
 \frametitle{Variance Test (e)}
 \begin{itemize}
 \item The p-value is 0.3764 (top right), above the threshold level of 0.0250.
@@ -445,7 +425,7 @@ ratio of variances
 %-------------------------------------------------%
 
 
-\begin{frame}
+
 \frametitle{Shapiro-Wilk Test(a)}
 
 
@@ -459,7 +439,7 @@ ratio of variances
 \end{itemize}
 \end{frame}
 %----------------------------------------%
-\begin{frame}[fragile]
+[fragile]
 \frametitle{Shapiro Wilk Test(b)}
 For the data set used previously; $x$ and $y$, we use the Shapiro-Wilk test to determine that both data sets are normally distributed.
 \begin{verbatim}
@@ -483,7 +463,7 @@ W = 0.9347, p-value = 0.5273
 
 
 %-------------------------------------------------%
-\begin{frame}[fragile]
+[fragile]
 \frametitle{Graphical Procedures for assessing Normality}
 
 \begin{itemize}
@@ -502,7 +482,7 @@ W = 0.9347, p-value = 0.5273
 
 %-------------------------------------------------%
 
-\begin{frame}
+
 \frametitle{Graphical Procedures for Assessing Normality}
 
 \begin{center}
@@ -510,7 +490,7 @@ W = 0.9347, p-value = 0.5273
 \end{center}
 \end{frame}
 %----------------------------------------------------------%
-\begin{frame}[fragile]
+[fragile]
 \frametitle{Grubbs Test for Determining an Outlier}
 
 The Grubbs test is used to determine if there are any outliers in a data set.\\ \bigskip
@@ -526,7 +506,7 @@ We reject this hypothesis if the p-value is sufficiently small.
 \end{frame}
 
 %-------------------------------------------------%
-\begin{frame}[fragile]
+[fragile]
 \frametitle{Grubbs Test for Determining an Outlier}
 \begin{verbatim}
 > grubbs.test(x, two.sided=T)
@@ -543,7 +523,7 @@ We conclude that while small by comparison to the other values, the lowest value
 
 %-------------------------------------------------%
 %-------------------------------------------------%
-\begin{frame}[fragile]
+[fragile]
 \frametitle{Single Sample Proportion Test (a)}
 
 \begin{itemize}
@@ -560,7 +540,7 @@ We conclude that while small by comparison to the other values, the lowest value
 \end{frame}
 %-------------------------------------------------%
 
-\begin{frame}[fragile]
+[fragile]
 \frametitle{Single Sample Proportion Test (b)}
 
 \begin{verbatim}
@@ -580,7 +560,7 @@ sample estimates:
 
 \end{frame}
 
-\begin{frame}[fragile]
+[fragile]
 \frametitle{Single Sample Proportion Test (c)}
 
 \begin{itemize}
@@ -595,7 +575,7 @@ sample estimates:
 \end{frame}
 
 %-------------------------------------------------%
-\begin{frame}[fragile]
+[fragile]
 \frametitle{Test of Equality for Two Sample Proportions (a)}
 The null hypothesis is that two populations have the same proportions for a particular characteristic.
 \[H_0 : \pi_1 = \pi_2 \]
@@ -610,7 +590,7 @@ The null hypothesis is that two populations have the same proportions for a part
 \end{frame}
 
 %-------------------------------------------------%
-\begin{frame}
+
 \frametitle{Test of Equality for Two Sample Proportions (b)}
 \begin{itemize}
 \item Consider a study where the proportion of Irish students who owned mobile devices, such as iphones and androids was compared to the corresponding proportion of French student.
@@ -623,7 +603,7 @@ The null hypothesis is that two populations have the same proportions for a part
 %-------------------------------------------------%
 
 
-\begin{frame}[fragile]
+[fragile]
 \frametitle{Test of Equality for Two Sample Proportions (c)}
 Based on the p-value, we fail to reject the null hypothesis. There is not enough evidence to assume a difference in proportions. Also the expected difference assumed under the null hypothesis, i.e. 0, is contained in the confidence interval.
 \begin{verbatim}
@@ -641,7 +621,7 @@ sample estimates:
 0.7692308 0.6666667
 \end{verbatim}
 \end{frame}
-\begin{frame}[fragile]
+[fragile]
 \frametitle{Test of Equality for Two Sample Proportions (d)}
 \begin{itemize}
 \item You would be required to compute the differences in observed proportions.
