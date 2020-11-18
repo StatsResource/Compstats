@@ -1,0 +1,213 @@
+\documentclass[a4]{beamer}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{newlfont}
+\usepackage{amsmath,amsthm,amsfonts}
+%\usepackage{beamerthemesplit}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{mathptmx} % Font Family
+\usepackage{helvet} % Font Family
+\usepackage{color}
+\mode<presentation> {
+\usetheme{Default} % was Frankfurt
+\useinnertheme{rounded}
+\useoutertheme{infolines}
+\usefonttheme{serif}
+%\usecolortheme{wolverine}
+% \usecolortheme{rose}
+\usefonttheme{structurebold}
+}
+\setbeamercovered{dynamic}
+\title[MA4413]{Statistics for Computing \\ {\normalsize MA4413 Lecture 10A}}
+\author[Kevin O'Brien]{Kevin O'Brien \\ {\scriptsize Kevin.obrien@ul.ie}}
+\date{Autumn Semester 2013}
+\institute[Maths \& Stats]{Dept. of Mathematics \& Statistics, \\ University \textit{of} Limerick}
+
+\renewcommand{\arraystretch}{1.5}
+%----------------------------------------------------------------------------------------------------------%
+\begin{document}
+
+
+\titlepage
+
+
+\noindent \textbf{Today's Class}
+\begin{itemize}
+\item[1] Paired t-test
+\item[2] Difference of two mean (large samples)
+\item[3] Difference of two mean (small samples)
+\item[4] Difference of two proportions
+\end{itemize}
+
+
+%-------------------------------------------------------------------------------------------%
+
+
+\noindent \textbf{Paired Data}
+\begin{itemize}
+\item Two measurements are paired when they come from the same case (person, item, observational unit). It is not ncessary for the measurements to be denominated in the same units, but very helpful.
+\item Pairing is determined by a study's design and the way the data values are obtained, and with the actual data values themselves not being particularly relevant. 
+\item Observations are paired rather than independent when there is a natural link between an observation in one set of measurements and a particular observation in the other set of measurements.
+\item Examples of paired data: \textit{\textbf{before and after}} measurements,\textit{ \textbf{with and without}} measurements, and two simultaneous measurements on the same item.
+\end{itemize}
+
+
+\noindent \textbf{Paired Data}
+\begin{itemize}
+\item We are usually required to compute the case-wise difference for each data pairing.
+\item Importantly, although we start out with two samples of data, we can look at the data as a single sample of \textit{\textbf{case-wise differences}}.
+\[d_i = x_i-y_i\]
+\item We can use the same methodologies that we have encountered previously for making decisions based on paired data.
+\item (Remark: For most paired data studies, the sample sizes are very small.)
+\end{itemize}
+
+%-------------------------------------------------------------------------------------------%
+
+\noindent \textbf{The Paired t-test}
+\begin{itemize}
+\item We will often be required to compute the case-wise differences, the average of those differences and the standard deviation of those difference.
+
+\item The mean difference for a set of differences between paired observations is
+\[ \bar{d} = {\sum d_i \over n }\]
+
+\item The computational formula for the standard deviation of the differences
+between paired observations is
+\[s_d = \sqrt{ {\sum d_i^2 - n\bar{d}^2 \over n-1}}\]
+%\item It is nearly always a small sample test.
+\end{itemize}
+
+
+
+%----------------------------------------------------------------------------------------------------%
+{
+\noindent \textbf{The Paired t-test}
+Using the sample to make inferences about the general population of case-wise differences.
+\begin{itemize}
+\item Often we are making conclusions for the population of differences. (Is a training regime effective? - based on a paired data sample.)
+\item Let $\mu_d$ be mean value for the population of case-wise differences.
+\item The null hypothesis is that that $\mu_d = 0$ (i.e. no difference)
+\item Given $\bar{d}$ mean value for the sample of differences, and $s_d$ standard deviation of the differences for the paired sample data, we can perform inference procedures as we have done previously.
+\end{itemize}
+}
+
+%----------------------------------------------------------------------------------%
+
+\noindent \textbf{Example 1: Paired Difference (a)}
+\begin{itemize}
+\item An automobile manufacturer collects mileage data for a sample of $n = 10$ cars in various weight categories
+using a standard grade of gasoline with and without a particular additive. \item Of course, the engines were tuned to the same
+specifications before each run, and the same drivers were used for the two gasoline conditions (with the driver in fact being
+unaware of which gasoline was being used on a particular run). \item Given the mileage data on the next slide,  test the hypothesis
+that there is no difference between the mean mileage obtained with and without the additive, using the 5 percent level of
+significance \item (Remark in lecture: Enough evidence for haulage company to start buying this additive?) \end{itemize}
+
+%-------------------------------------------------------------------------------------------%
+
+\noindent \textbf{Example 1: Paired Difference (b)}
+\small
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}\hline
+car & with additive & without additive & $d_i$ & $d^2_i$\\\hline
+1&36.7&36.2&0.5&0.25\\\hline
+2&35.8&35.7&0.1&0.01\\\hline
+3&31.9&32.3&-0.4&0.16\\\hline
+4&29.3&29.6&-0.3&0.09\\\hline
+5&28.4&28.1&0.3&0.09\\\hline
+6&25.7&25.8&-0.1&0.01\\\hline
+7&24.2&23.9&0.3&0.09\\\hline
+8&22.6&22.0&0.6&0.36\\\hline
+9&21.9&21.5&0.4&0.16\\\hline
+10&20.3&20.0&0.3&0.09\\\hline
+\end{tabular}
+\end{center}
+
+
+%--------------------------------------------------------------------------------------------------------------------------%
+%-------------------------------------------------------------------------------------------%
+
+\noindent \textbf{Example 1: Paired Difference (c)}
+\begin{itemize}
+\item The average of the case wise differences is computed as \[\bar{d} = {\sum d_i \over n}\]
+\[ \bar{d} = { 0.5 + 0.1  - 0.4 + \ldots + 0.30 \over 10 }= 0.17 \]
+\item Also, using last column, $\sum d^2_i = (0.25 + 0.01 + 0.16 + \ldots + 0.09) = 1.31$
+\end{itemize}
+
+
+
+
+
+\noindent \textbf{Example 1: Paired Difference (d)}
+\textbf{Sample standard deviation of the case-wise differences}:
+\large
+\[s_d = \sqrt{ {\sum d_i^2 - n\bar{d}^2 \over n-1}}\]
+\vspace{0.2cm}
+We know the following:
+\begin{itemize}
+\item The sample size $n$ which is 10.
+\item The average of the case-wise differences. $\bar{d} = 0.17$
+\item  $\sum d^2_i = 1.31$
+\end{itemize}
+
+
+
+
+
+\noindent \textbf{Example 1: Paired Difference (e)}
+\textbf{Sample standard deviation  of the case-wise differences}:
+\[s_d = \sqrt{ {\sum d_i^2 - n\bar{d}^2 \over n-1}}\]
+
+\[s_d = \sqrt{ { 1.31 - 10(0.17)^2 \over 9}} = 0.337\]
+
+\textbf{The standard error:} \[ S.E.(\bar{d}) = \frac{s_d }{\sqrt{n}} = {0.337 \over 3.16} = 0.107\]
+
+
+
+\noindent \textbf{Example 1: Paired Difference (f)}
+\textbf{Null and Alternative Hypotheses}:
+\begin{itemize}
+\item That is, the null hypothesis is:\\
+$H_0: \mu_d = 0$ Additive makes no difference to performance\\
+$H_1: \mu_d \neq 0$ Additive makes a significant difference to performance \\
+\end{itemize}
+\vspace{0.5cm}
+\textbf{Test Statistic}:
+\begin{itemize}
+\item Test Statistic
+\[TS =\frac{\bar{d} - \mu_d}{S.E.(\bar{d})} =  \frac{0.17 - 0}{0.107} = 1.59\]
+\end{itemize}
+
+
+
+\noindent \textbf{Example 1: Paired Difference (g)}
+\textbf{Critical value}:
+\begin{itemize}
+\item $\alpha = 0.05, k = 2$ \item small sample , so $df = n-1 = 9$
+\item As with earlier examples in the course, CV is found to be \textbf{2.262} from the statistical tables.
+\end{itemize}
+\bigskip
+\textbf{Decision Rule}:\\
+Is $|TS| > CV$? \\ No, we fail to reject the null hypothesis.
+There is no enough evidence to suggest this additive is effective in improving mileages for automobiles.
+
+
+
+\noindent \textbf{Example 1: Paired Difference (h)}
+\textbf{Confidence Interval}:
+\begin{itemize}
+\item Recall our sample mean $\bar{x}$, the standard error $S.E(\bar{x})$ and the quantile from the $t-$ distribution.
+\item We can use these values to compute a 95\% confidence interval.
+\item The 95\% confidence interval can be computed as $0.17 \pm (2.262 \times 0.17 = (-0.21,0.55)$
+\item Notice that 0 is within that range of values. This supports our conclusion to reject the Null Hypothesis.
+\end{itemize}
+
+
+
+
+
+
+\end{document}
+
+
+
+
