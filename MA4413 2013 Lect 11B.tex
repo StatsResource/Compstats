@@ -1,37 +1,33 @@
-\documentclass[a4]{beamer}
-\usepackage{amssymb}
-\usepackage{graphicx}
+ \documentclass[a4paper,12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{eurosym}
+\usepackage{vmargin}
+\usepackage{amsmath}
+\usepackage{framed}
+\usepackage{multicol}
+\usepackage{graphics}
+\usepackage{enumerate}
+\usepackage{epsfig}
 \usepackage{subfigure}
-\usepackage{newlfont}
-\usepackage{amsmath,amsthm,amsfonts}
-%\usepackage{beamerthemesplit}
-\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
-\usepackage{mathptmx} % Font Family
-\usepackage{helvet} % Font Family
-\usepackage{color}
-\mode<presentation> {
-\usetheme{Default} % was Frankfurt
-\useinnertheme{rounded}
-\useoutertheme{infolines}
-\usefonttheme{serif}
-%\usecolortheme{wolverine}
-% \usecolortheme{rose}
-\usefonttheme{structurebold}
-}
-\setbeamercovered{dynamic}
-\title[MA4413]{Statistics for Computing \\ {\normalsize MA4413 Lecture 11B}}
-\author[Kevin O'Brien]{Kevin O'Brien \\ {\scriptsize kevin.obrien@ul.ie}}
-\date{Autumn 2013}
-\institute[Maths \& Stats]{Dept. of Mathematics \& Statistics, \\ University \textit{of} Limerick}
-\renewcommand{\arraystretch}{1.5}
-%------------------------------------------------------------------------%
+\usepackage{fancyhdr}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.00.0.2570}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{LastRevised=Wednesday, February 23, 2011 13:24:34}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{Language=American English}
+
+\pagestyle{fancy}
+\setmarginsrb{20mm}{0mm}{20mm}{25mm}{12mm}{11mm}{0mm}{11mm}
+\lhead{MA4413 2013} \rhead{Mr. Kevin O'Brien}
+\chead{Addition to Formula Sheet }
+%\input{tcilatex}
 
 \begin{document}
 
-\titlepage
-
-%----------------------------------------------------------------------------------%
-
+\large 
 \noindent \textbf{Entropies: Example (a)}
 \begin{itemize}
 \item The input source to a noisy communication channel is a random variable X over the
@@ -39,11 +35,11 @@ four symbols $\{a, b, c, d\}$. \item  The output from this channel is a random v
 four symbols.
 \end{itemize}
 
-
+\medskip 
 %----------------------------------------------------------------Part 2 %
 
-\noindent \textbf{Entropies: Example (b)}
-The joint distribution of these two random variables is as follows:\\ \bigskip
+%% - \noindent \textbf{Entropies: Example (b)}
+\noindent The joint distribution of these two random variables is as follows:\\ \bigskip
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|}
 \hline
@@ -57,40 +53,38 @@ y=d & 1/32& 1/32& 1/16 & 0\\ \hline
 
 %----------------------------------------------------------------Part 2 %
 
-\noindent \textbf{Entropies: Example (c)}
-\begin{itemize}
-\item Write down the marginal distribution for $X$ and compute the marginal entropy $H(X)$.
+\noindent \textbf{Exercises}
+\begin{enumerate}[(a)]
+ \item Write down the marginal distribution for $X$ and compute the marginal entropy $H(X)$.
 \item Write down the marginal distribution for $Y$ and compute the marginal entropy $H(Y )$.
 \item What is the joint entropy $H(X, Y ) $ of the two random variables?
 \item What is the conditional entropy $H(Y|X)$?
 \item What is the conditional entropy $H(X|Y)$?
 \item What is the mutual information $I(X;Y)$ between the two random variables?
-\end{itemize}
+\end{enumerate}
 
-%----------------------------------------------------------------------------------%
-%----------------------------------------------------------------Part 2 %
 
-\noindent \textbf{Entropies: Example (d)}
+\newpage 
+
+\noindent \textbf{Parts (a) and (b)}\\
 The marginal distribution of these two random variables is as follows:\\ \bigskip
+{
+\Large 
 \begin{center}
 \begin{tabular}{|c|c|c|c|c||c|}
 \hline
-&x=a& x=b & x=c & x=d &\alert{P(Y)}\\ \hline
-y=a &1/8 &1/16 &1/16 &1/4 & \alert{0.50}\\ \hline
-y=b &1/16 & 1/8& 1/16& 0 & \alert{0.25}\\ \hline
-y=c & 1/32&1/32 & 1/16 & 0& \alert{0.125}\\ \hline
-y=d & 1/32& 1/32& 1/16 & 0& \alert{0.125}\\ \hline \hline
-\alert{P(X)} & \alert{0.25}& \alert{0.25}& \alert{0.25} & \alert{0.25}&\\ \hline
+&x=a& x=b & x=c & x=d &\textbf{P(Y)}\\ \hline
+y=a &1/8 &1/16 &1/16 &1/4 & \textbf{0.50}\\ \hline
+y=b &1/16 & 1/8& 1/16& 0 & \textbf{0.25}\\ \hline
+y=c & 1/32&1/32 & 1/16 & 0& \textbf{0.125}\\ \hline
+y=d & 1/32& 1/32& 1/16 & 0& \textbf{0.125}\\ \hline \hline
+\textbf{P(X)} & \textbf{0.25}& \textbf{0.25}& \textbf{0.25} & \textbf{0.25}&\\ \hline
 \end{tabular}
 \end{center}
-
-
-
-
-\noindent \textbf{Entropies: Example (e)}
+}
+\medskip
 \begin{itemize}
-
-\item H(X) , the entropy of X, is computed as\\
+\item $H(X)$, the entropy of $X$, is computed as\\
  \[H(X) = -\sum P(x_i) \mbox{log}_2P(x_i)\] \item $H(X) =  (-0.25 \times -2) + (-0.25 \times -2) +(-0.25 \times -2) +(-0.25 \times -2)$\item $ H(X) = 2 \mbox{b}$ \bigskip
 
 \item H(X) , the entropy of Y, is computed as\\
@@ -100,35 +94,35 @@ y=d & 1/32& 1/32& 1/16 & 0& \alert{0.125}\\ \hline \hline
 
 \end{itemize}
 
+\newpage 
 
-
-\noindent \textbf{Entropies: Example (f)}
+\noindent \textbf{Part (c)}
 \begin{itemize}
 
-\item To compute the joint entropy $H(X,Y)$,  we will use $H(X,Y) = -\sum P(x_i,y_y) \mbox{log}_2P(x_i,y_j)$
-\bigskip
+\item To compute the joint entropy $H(X,Y)$,  we will use \[H(X,Y) = -\sum P(x_i,y_y) \mbox{log}_2P(x_i,y_j)\]
+
 \item This means we should compute the entropy component for each cell of the table, and sum up all the resultant terms.
 \bigskip
-\item To save time, we will aggregate similar results, \begin{itemize} \item there are 4 cells where the probability is $1/32$,\item 6 cells with probability $1/16$, \item 2 cells with probability $1/8$ \item and 1 cell with probability $1/4$. \end{itemize}
+\item To save time, we will aggregate similar results, 
+\begin{itemize} 
+\item[$\ast$] there are 4 cells where the probability is $1/32$,
+\item[$\ast$] 6 cells with probability $1/16$, 
+\item[$\ast$] 2 cells with probability $1/8$
+\item[$\ast$] and 1 cell with probability $1/4$. 
+\end{itemize}
 \item Solving
 \[ H(X,Y) = [4 \times -{1\over 32} \mbox{log}_2 {1\over 32} ] + [6 \times -{1\over 16} \mbox{log}_2 {1\over 16} ] + \ldots + [1 \times -{1\over 4} \mbox{log}_2 {1\over 4} ] \]
-\end{itemize}
 
-%---------------------------------------------------------------------------------------------------------------------------------------%
-
-
-\noindent \textbf{Entropies: Example (g)}
-\begin{itemize}
 \item Simplifying\[ H(X,Y) = [4 \times -{1\over 32} \mbox{log}_2 {1\over 32} ] + [6 \times -{1\over 16} \mbox{log}_2 {1\over 16} ] + \ldots + [1 \times -{1\over 4} \mbox{log}_2 {1\over 4} ] \]
 \item Simplifying \[H(X,Y) = [-{4\over 32} \times -5 ] + [-{6\over 16} \times -4 ] + [-{2\over 8} \times -3 ] + [ -{1\over 4} \times -2]\]
 \item $H(X,Y) = 27/8$ b.
 \end{itemize}
 
 %---------------------------------------------------------------------------------------------------------------------------------------%
-
-
-\noindent \textbf{Entropies: Example (h)}
-From last lecture, two useful relationships among the types of entropies are
+\newpage
+\noindent \textbf{Parts (d) and (e)}
+\begin{framed}
+\noindent Two useful relationships among the types of entropies are
 \begin{itemize}
 \item $H(X,Y)=H(X|Y)+H(Y) $
 \item $H(X,Y)=H(Y|X)+H(X) $
@@ -139,13 +133,13 @@ Re-arranging these formulae
 \item $H(X,Y)-H(Y) = H(X|Y) $
 \item $H(X,Y)-H(X) = H(Y|X) $
 \end{itemize}
-
+\end{framed}
 
 %---------------------------------------------------------------------------------------------------------------------------------------%
 
 
-\noindent \textbf{Entropies: Example (i)}
-Re-arranging these formulae
+
+\noindent Re-arranging these formulae
 \begin{itemize}
 \item $H(X|Y) = H(X,Y)-H(Y) = 27/8 - 14/8 = 13/8$ b. \bigskip
 \item $H(Y|X) = H(X,Y)-H(X) = 27/8 - 16/8 = 11/8$ b.
@@ -153,549 +147,29 @@ Re-arranging these formulae
 \bigskip
 \begin{itemize}
 \item Remark $1.75 =14/8$ and $2 = 16/8$.\\\bigskip
-\item Also: we will derive $H(Y|X$ and $H(X|Y)$ from first principles in a tutorial.
+%\item Also: we will derive $H(Y|X$ and $H(X|Y)$ from first principles in a tutorial.
 \end{itemize}
 
 %---------------------------------------------------------------------------------------------------------------------------------------%
 
-
-\noindent \textbf{Entropies: Example (j)}
+\newpage 
+\noindent \textbf{Part (f)}\\
 There are three alternative ways to obtain the answer:
+\begin{eqnarray*}
+I(X; Y ) &=& H(X) + H(Y ) - H(X,Y )\\ 
+&=& 2 + \frac{7}{4} - \frac{27}{8} \\
+&=& \frac{16+14-27}{8} \\
+&=& 3/8 \mbox{ b}.\\
+\end{eqnarray*}
+
+\begin{center}
+\includegraphics[scale=0.8]{images/11BMutualInfo.jpg}
+\end{center}
+
 \begin{itemize}
 \item $I(X; Y ) = H(Y ) - H(Y |X)$ = $7/4 - 11/8 = 3/8$ b.
 \item $I(X; Y ) = H(X) - H(X|Y)$ = $2 - 13/8 = 3/8$ b.
-\item $I(X; Y ) = H(X) + H(Y ) - H(X,Y )$ = $2 + 7/4 - 27/8 = (16+14-27)/8 = 3/8$b.
-\end{itemize}
 
-%---------------------------------------------------------------------------------------------------------------------------------------%
-
-
-\noindent \textbf{Channel Capacity}
-\begin{itemize} \item
-In information theory, channel capacity is the most conservative upper bound on the amount of information that can be reliably transmitted over a communications channel. \item  It is given by the maximum of the mutual information between the input and output of the channel (maximum in respect to input probabilities).
-\end{itemize}
-
-
-
-\noindent \textbf{Channel Capacity}
-\textbf{A. Channel Capacity per Symbol C:}\\
-The channel capacity per symbol of a DMC is defined as
-\[
-C_s = \mbox{max }_{(P(x_i))}I(X; Y) \mbox{ b/symbol }
-\]
-where the maximization is over all possible input probability distributions $P(x_i)$ on X. Note that the
-channel capacity $C_s$ is a function of only the channel transition probabilities that define the channel.
-
-
-%---------------------------------------------------------------------------------------------------------------------------------------%
-
-
-\textbf{B. Channel Capacity per Second :}\\
-If $r$ symbols are being transmitted per second, then the maximum rate of transmission of
-information per second is $rC_s$.\\ This is the channel capacity per second and is denoted by $C$ (b/sec).
-\[C = rC_s     \mbox{          b/sec} \]
-
-
-%------------------------------------------------------------------------%
-
-
-
-%---------------------------------------------------------------------------------Page 251 C-%
-
-\noindent \textbf{Capacities of special channels}
-\textbf{\emph{Lossless Channel}}\\\begin{itemize} \item For a lossless channel, the mutual information (information transfer) is equal to the input (source) entropy), and no source information is lost in transmission.\item It can be shown that $H(X|Y) = 0$ ( If $y_i$ is the output, there is certainty about the input). Also $I(X;Y) = H(X)$.
-\item Consequently, the channel capacity per symbol is
-\[ C_s = \mbox{ max }_{P(x_i)} H(X) = \mbox{log}_2m \]
-where $m$ is the number of symbols in $X$.
-\item For example, if there are $m=4$ input channels, then $C =  \mbox{log}_2 4 = 2$ b/symbol  \end{itemize}
-
-
-%---------------------------------------------------------------------------------Page 251 D-%
-
-\noindent \textbf{Capacities of special channels}
-\textbf{\emph{Deterministic Channel}}:
-\begin{itemize}
-\item The mutual information (information transfer) is equal to the output entropy.
-\item It can be shown that $H(Y|X) = 0$ ( If $x_i$ is the input, there is certainty about the output). Also $I(X;Y) = H(Y)$.
-\item  The channel capacity per symbol is
-\[ C_s = \mbox{ max }_{P(x_i)} H(Y) = \mbox{log}_2n \]
-where $n$ is the number of symbols in $Y$.
-\end{itemize}
-
-%---------------------------------------------------------------------------------Page 252 A -%
-
-\noindent \textbf{Capacities of special channels}
- \textbf{\emph{Noiseless Channel}}:
-\begin{itemize}
-\item Since a noiseless channel is both lossless and deterministic , we can say that $I(X;Y) = H(X) = H(Y)$.
-The mutual information (information transfer) is equal to the output entropy). \item The channel capacity per symbol is
-\[ C_s = \mbox{log}_2m = \mbox{log}_2n \]
-\end{itemize}
-
-
-%---------------------------------------------------------------------------------Page 252 A -%
-
-\noindent \textbf{Capacities of special channels}
- \textbf{\emph{Binary Symmetric Channel}}:
-\begin{itemize}
-\item It can be shown that, for a binary symmetric channel, the the channel capacity per symbol is
-\[ C_s = 1 + p\mbox{log}_2p  + 1-p\mbox{log}_2 (1-p)  \]
-\end{itemize}
-
-
-
-\noindent \textbf{Source Coding}
-\begin{itemize}
-\item A conversion of the output of a DMS into a sequence of binary symbols (binary code word) is
-called \textbf{\emph{source coding}}.
-\item  The device that performs this conversion is called the source encoder.
-\item
-An objective of source coding is to minimize the average bit rate required for representation of the
-source by reducing the redundancy of the information source.
-\end{itemize}
-
-
-
-\noindent \textbf{Source Coding : Code Length and Code Efficiency}
-\begin{itemize}
-
-\item
-Let X be a DMS with finite entropy $H(X)$ and an alphabet $\{x_1 , \ldots,  x_m\}$, each with corresponding
-probabilities of occurrence $P(x_i)$. \item Let the binary code word assigned to symbol $x_i$ by
-the encoder have length $n_i$ b. \item The length of a code word is the number of binary digits
-in the code word. The average code word length L, per source symbol is given by
-
-\[ E(L) = \sum ^{m}_{i=1} P(x_i) n_i \]
-\end{itemize}
-
-
-
-
-\noindent \textbf{Source Coding : Code efficiency and Code redundancy}
-% Pg 253/254
-\begin{itemize}
-\item The parameter $L$ (estimated by $E(L)$) represents the average number of bits per source symbol used in the source coding process.\item
-The code efficiency is defined as \[\eta = {L_{min} \over L} \]where $L_{min}$ is the minimum possible value of $L$. When $\eta$ approaches unity, the codes is said to be efficient.
-\item The code redundancy $\gamma$ is defined as $\gamma = 1- \eta$.
-\end{itemize}
-
-
-
-%---------------------------------------------------------------------------------------------------------------------------------------%
-
-%page 254
-\noindent \textbf{Source Coding Theorem}
-\begin{itemize}
-\item The source coding theorem states that for a DMS X with entropy $H(X)$, the average code word length $L$ per symbol is bounded as $L \geq H(X)$
-
-\item Furthermore L can be made as close to H(X) as required for some suitably chosen code.
-\item Thus, with $ L_{min} \geq H(X)$, the code efficiency can be rewritten as
-\[\eta = {H(X) \over L} \]
-\item We will use this definition for efficiency. (Remark $L$ is estimable by $E(L)$.)
-\end{itemize}
-
-
-%---------------------------------------------------------------------------------------------------------------------------------------%
-
-\noindent \textbf{Classification of Codes}
-In this section we look at to classify codes according to the following categories.
-\begin{enumerate}
-\item Fixed Length Codes
-\item Variable Length Codes
-\item Distinct Codes
-\item Prefix-Free Codes
-\item Uniquely decodable codes
-\item Instantaneous Codes
-\item Optimal Codes
-\end{enumerate}
-
-%---------------------------------------------------------------------------------------------------------------------------------------%
-
-\noindent \textbf{Classification of Codes}
-Classification of codes is best illustrated by an example. Consider the table below where a source of
-size 4 has been encoded in binary codes with symbol 0 and 1.\\ \bigskip
-% Table 10-I Binary Codes
-\begin{center}
-\begin{tabular}{|c| c| c| c| c| c| c|}
-\hline
-X& Code l& Code 2& Code 3 &Code 4& Code 5& Code 6\\\hline
-$x_1$& 00& 00 &0 &0 &0 &1\\
-$x_2$& 01& 01 &1 &10 &01 &01\\
-$x_3$ &00 &10& 00& 110& 011 &001\\
-$x_4$ &11& 11& 11& 111 &0111 &0001\\\hline
-\end{tabular}
-\end{center}
-
-
-
-%---------------------------------------------------------------------------------------------------------------------------------------%
-
-\begin{itemize}
-\item[1.] Fixed-Length Codes: A fixed-length code is one whose code word length is fixed. Code 1 and code 2are
-fixed-length codes with length 2.
-\item[2.] Variable-Length Codes: A variable-length code is one whose code word length is not fixed. All codes except codes 1 and 2 are variable-length codes.
-\item[3.] Distinct Codes:
-A code is distinct if each code word is distinguishable from other code words. All codes except code 1 are distinct codes. Notice the codes for $x_l$ and $x_3$.
-\item[4.] Prefix-Free Codes:
-A code in which no code word can be formed by adding code symbols to another code word is
-called a prefix-free code. Thus, in a prefix-free code no code word is a prefix of another. Codes 2, 4,
-and 6 are prefix-free codes.
-\end{itemize}
-
-
-%-----------------------------------------------------------------------------------------------------------------------------------------------------------%
-
-5. Uniquely Decodable Codes
-\begin{itemize}
-\item A distinct code is uniquely decodable if the original source sequence can be reconstructed perfectly
-from the encoded binary sequence. \item Note that code 3 is not a uniquely decodable code. \item
-For example, the binary sequence 1001 may correspond to the source sequences $x_2x_3x_2$ or $x_2x_1x_1x_2$.
-\item
-A sufficient condition to ensure that a code is uniquely decodable is that no code word is a prefix of
-another. \item Thus, the prefix-free codes 2, 4, and 6 are uniquely decodable codes. Note that the prefix -free
-condition is not a necessary condition for unique decodability. \item For example, code 5 does
-not satisfy the prefix-free condition, and yet it is uniquely decodable since the bit 0 indicates the
-beginning of each code word of the code.
-\end{itemize}
-
-%-----------------------------------------------------------------------------------------------------------------------------------------------------------%
-
-6. Instantaneous Codes
-\begin{itemize} \item A uniquely decodable code is called an instantaneous code if the end of any code word is
-recognizable without examining subsequent code symbols. \item The instantaneous codes have the property
-previously mentioned that no code word is a prefix of another code word.  \end{itemize}
-7. Optimal Codes
-\begin{itemize}
-\item A code is said to be optimal if it is instantaneous and has minimum average length $L$ for a given
-source with a given probability assignment for the source symbols.
-\end{itemize}
-
-%-----------------------------------------------------------------------------------------------------------------------------------------------------------%
-
-\noindent \textbf{ Kraft inequality}
-\begin{itemize}
-\item Let X be a DMS with alphabet ($x _i = \{1, 2, . . . ,m\}$). Assume that the length of the assigned binary
-code word corresponding to x, is n.
-\item A necessary and sufficient condition for the existence of an instantaneous binary code is
-
- \[ K = \sum^{m}_{i=1}2^{-n_i} \leq 1 \]
-which is known as the \textbf{Kraft inequality}.
-\item Note that the Kraft inequality assures us of the existence of an instantaneously decodable code
-with code word lengths that satisfy the inequality. But it does not show us how to obtain these code
-words, nor does it say that any code that satisfies the inequality is automatically uniquely decodable
 \end{itemize}
 
 \end{document}
-
-% - Lossless data compression.
-% - Huffman Coding
-% - Inverse Mapping
-
-
-%-----------------------------------------------------------------Part 3 Data Compression %
-
-{
-\noindent \textbf{Data compression(1)}
-Data compression is the science (and art) of representing information in a compact form. Having been the domain of a relatively small group of engineers and scientists, it is now ubiquitous. \\ \bigskip It has been one of the critical enabling technologies for the on-going digital multimedia revolution for decades. Without compression techniques, none of the ever-growing Internet, digital TV, mobile communication or increasing video communication would have been practical developments. \\ \bigskip
-}
-%-----------------------------------------------------------------------------------------------%
-{
-\noindent \textbf{Data compression(1)}
-
-Data compression is an active research area in computer science. By "compressing data", we actually mean deriving techniques or, more specifically, designing efficient algorithms to:
-
-\begin{itemize}
-\item represent data in a less redundant fashion
-\item remove the redundancy in data
-\item implement coding, including both encoding and decoding.
-\end{itemize}
-
-}
-
-
-
-
-
-%----------------------------------------------------------------Part 4 Huffman Coding-%
-
-{
-\noindent \textbf{Huffman encoding algorithm}
-Huffman coding is an entropy encoding algorithm used for lossless data compression.\\
-\bigskip
-A frequency based coding scheme (algorithm) that follows Huffman's idea is called Huffman coding. Huffman coding is a simple algorithm that generates a set of variable-size codewords of the minimum average length. The algorithm for Huffman encoding involves the following steps:
-}
-%--------------------------------------------------------------Part 4 Huffman Coding-%
-
-{
-\begin{itemize}
-\item[1.] Frequency Table: Constructing a frequency table sorted in descending order.
-
-\item[2.] Building a binary tree:
-    Carrying out iterations until completion of a complete binary tree:
-    \begin{itemize}
-    \item[(a)] Merge the last two items (which have the minimum frequencies) of    the frequency table to form a new combined item with a sum
-    frequency of the two.
-    \item[(b)] Insert the combined item and update the frequency table.
-    \end{itemize}
-
-\item[3.] Deriving Huffman tree:
-Starting at the root, trace down to every leaf; mark �0� for a left branch and �1� for a right branch.
-
-\item[4.] Generating Huffman code:
-Collecting the 0s and 1s for each path from the root to a leaf and assigning a 0-1 codeword for each symbol.
-
-\end{itemize}
-}
-%--------------------------------------------------------------------------Part 4 Huffman Coding-%
-
-{
-
-Huffman coding is a method of lossless data compression, and a form of entropy encoding. The basic idea is to map an alphabet to a representation for that alphabet, composed of strings of variable size, so that symbols that have a higher probability of occurring have a smaller representation than those that occur less often.
-
-}
-%-------------------------------------------------------------------------------Part 4 Huffman Coding-%
-
-{
-The key to Huffman coding is Huffman's algorithm, which constructs an extended binary tree of minimum weighted path length from a list of weights. For this problem, our list of weights consists of the probabilities of symbol occurrence. From this tree (which we will call a Huffman tree for convenience), the mapping to our variable-sized representations can be defined.
-}
-%-----------------------------------------------------------------------Part 4 Huffman Coding-%
-{
-The mapping is obtained by the path from the root of the Huffman tree to the leaf associated with a symbol's weight. The method can be arbitrary, but typically a value of 0 is associated with an edge to any left child and a value of 1 with an edge to any right child (or vice-versa). By concatenating the labels associated with the edges that make up the path from the root to a leaf, we get a binary string. Thus the mapping is defined.
-}
-%-------------------------------------------------------------------------------------------%
-{
-\noindent \textbf{Inverse Mapping}
-\begin{itemize}
-\item In order to recover the symbols that make up a string from its representation after encoding, an inverse mapping must be possible. It is important that this mapping is unambiguous. \item We can show that all possible strings formed by concatenating any number of path labels in a Huffman tree are indeed unambiguous, due to the fact that it is a complete binary tree. \item That is, given a string composed of Huffman codes, there is exactly one possible way to decompose it into the individual codes.
-\end{itemize}
-}
-
-{
-\noindent \textbf{Data compression(2)}
-The key approaches of data compression can be summarized as modelling + coding.
-Modelling is a process of constructing a knowledge system for
-performing compression. Coding includes the design of the code and product of the compact data form.
-
-}
-
-% - Entropy
-% - Information
-% - Mutual Information
-
-
-
-%-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%
-
-
-% page 247
-
-
-
-
-
-
-
-
-
-%-----------------------------------------------------------------------------------------------------------------------------------------------------------%
-
-\noindent \textbf{ ENTROPY CODING}
-The design of a variable-length code such that its average code word length approaches the
-entropy of the DMS is often referred to as enlmpy coding. In this section we present two examples of
-entropy coding.
-\begin{itemize}
-\item Shannon- Fano Coiding
-\item Huffman Coding
-\end{itemize}
-
-%-----------------------------------------------------------------------------------------------------------------------------------------------------------%
-
-% Page 255
-{A. Shannon-Fun Coding:}
-An efficient code can be obtained by the following simple procedure, known as
-Shannon- Fano algorithm:
-\begin{itemize}
-\item[1.] List the source symbols in order of decreasing probability.
-\item[2.] Partition the set into two sets that are as close to equiprobable as possible, and assign 0 to the
-upper set and 1 to the lower set.
-\end{itemize}
-
-
-%-----------------------------------------------------------------------------------------------------------------------------------------------------------%
-% Page 256 Bottom
-\noindent \textbf{B. Huffman Encoding:}
-In general, Huffman encoding results in an optimum code. Thus, it is the code that has the highest
-efliciency.\\ The Huffman encoding procedure is as follows:
-\begin{itemize}\item[1.] List the source symbols in order of decreasing probability.
-\item[2.] Combine the probabilities of the two symbols having the lowest probabilities, and reorder
-the resultant probabilities; this step is called reduction 1. The same procedure is repeated until
-there are two ordered probabilities remaining.
-\item[3.] Start encoding with the last reduction, which consists of exactly two ordered probabilities. Assign
-0 as the first digit in the code words for all the source symbols associated with the first probability;
-assign 1 to the second probability.
-\item[4.] Now go back and assign 0 and 1 to the second digit for the two probabilities that were combined
-in the previous reduction step, retaining all assignments made in Step 3.
-\item[5.] Keep regressing this way until the first column is reached.
-\end{itemize}
-
-
-%An example of Huffman encoding is shown in Table 10-3.
-%H(X) = 2.36b/symbol
-%L = 2.38 b/symbol
-%\nu = 0.99
-
-%----------------------------------------------------------------------------------%
-
-{
-Huffman coding is an entropy encoding algorithm used for lossless data compression.
-
-
-}
-%----------------------------------------------------------------------------------%
-
-{
-\noindent \textbf{Huffman encoding algorithm}
-
-A frequency based coding scheme (algorithm) that follows Huffman�s idea is called Huffman coding. Huffman coding is a simple algorithm that generates a set of variable-size codewords of the minimum average length. The algorithm for Huffman encoding involves the following steps:
-}
-%----------------------------------------------------------------------------------%
-
-{
-\begin{itemize}
-\item[1.] Frequency Table: Constructing a frequency table sorted in descending order.
-
-\item[2.] Building a binary tree:
-    Carrying out iterations until completion of a complete binary tree:
-    \begin{itemize}
-    \item[(a)] Merge the last two items (which have the minimum frequencies) of    the frequency table to form a new combined item with a sum
-    frequency of the two.
-    \item[(b)] Insert the combined item and update the frequency table.
-    \end{itemize}
-
-\item[3.] Deriving Huffman tree:
-Starting at the root, trace down to every leaf; mark �0� for a left branch and �1� for a right branch.
-
-\item[4.] Generating Huffman code:
-Collecting the 0s and 1s for each path from the root to a leaf and assigning a 0-1 codeword for each symbol.
-
-\end{itemize}
-}
-%----------------------------------------------------------------------------------%
-
-{
-\noindent \textbf{Huffman Coding}
-Huffman coding is a method of lossless data compression, and a form of entropy encoding. The basic idea is to map an alphabet to a representation for that alphabet, composed of strings of variable size, so that symbols that have a higher probability of occurring have a smaller representation than those that occur less often.
-
-}
-%----------------------------------------------------------------------------------%
-
-{
-\noindent \textbf{Huffman Coding}
-The key to Huffman coding is Huffman's algorithm, which constructs an extended binary tree of minimum weighted path length from a list of weights. For this problem, our list of weights consists of the probabilities of symbol occurrence. From this tree (which we will call a Huffman tree for convenience), the mapping to our variable-sized representations can be defined.
-}
-%-------------------------------------------------------------------------------------------%
-{
-\noindent \textbf{Huffman Coding}
-The mapping is obtained by the path from the root of the Huffman tree to the leaf associated with a symbol's weight. The method can be arbitrary, but typically a value of 0 is associated with an edge to any left child and a value of 1 with an edge to any right child (or vice-versa). By concatenating the labels associated with the edges that make up the path from the root to a leaf, we get a binary string. Thus the mapping is defined.
-}
-%-------------------------------------------------------------------------------------------%
-{
-\noindent \textbf{Inverse Mapping}
-\begin{itemize}
-\item In order to recover the symbols that make up a string from its representation after encoding, an inverse mapping must be possible. It is important that this mapping is unambiguous. \item We can show that all possible strings formed by concatenating any number of path labels in a Huffman tree are indeed unambiguous, due to the fact that it is a complete binary tree. \item That is, given a string composed of Huffman codes, there is exactly one possible way to decompose it into the individual codes.
-\end{itemize}
-}
-%-------------------------------------------------------------------------------------------%
-{
-
-\noindent \textbf{Ambiguity}
-
-Ambiguity occurs if there is any path to some symbol whose label is a prefix of the label of a path to some other symbol. In the Huffman tree, every symbol is a \textbf{\emph{leaf}}. Thus it is impossible for the label of a path to a leaf to be a prefix of any other path label, and so the mapping defined by Huffman coding has an inverse and decoding is possible.
-}
-
-\end{document}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-%-----------------------------------------------------------------------------------------------%
- % ULCIS
-\noindent \textbf{Self Information}Self-information
-This is defined by the following mathematical formula:$I(A) = −logb P(A)$
-
-The self-information of an event measures the amount of one's surprise
-evoked by the event. The negative logarithm $−logb P(A)$ can also be written as \[
-log_b  {1 \over P(A)} \]
-Note that log(1) = 0, and that $| − log(P(A))|$ increases as P(A) decreases
-from 1 to 0. This supports our intuition from daily experience. For example,
-a low-probability event tends to cause more ``surprise".
-
-
-
-%-------------------------------------------------------------------------------------------%
-{
-\noindent \textbf{Example}
-For a simple example, we will take a short phrase and derive our probabilities from a frequency count of letters within that phrase. The resulting encoding should be good for compressing this phrase, but of course will be inappropriate for other phrases with a different letter distribution.
-
-"All you base are belong to us"
-}
-
-
-%----------------------------------------------------------------------------------%
-{
-\noindent \textbf{Entropy}
-\begin{itemize}
-\item Entropy is the uncertainty of a single random variable. \item We can define \textbf{\emph{conditional entropy }}$H(X|Y)$, which is the entropy of a random variable
-conditional on the knowledge of another random variable. \item The reduction in uncertainty due to another random variable is called the \textbf{\emph{mutual information}}.
-\end{itemize}
-}
-%----------------------------------------------------------------------------------%
-
-
-
-%----------------------------------------------------------------------------------%
-{
-\begin{description}[Second Item]
-\item[First Item] Description of first item
-\item[Second Item] Description of second item
-\item[Third Item] Description of third item
-\item[Forth Item] Description of forth item
-\end{description}
-
-}
-
-
-{
-\noindent \textbf{What is Information?}
-\begin{itemize} \item Once we agree to define the information of an event ain terms of P(a), the properties (2) and (3) will be satisfied if the information in ais defined as
-\[ I(a) = -log P(a)\]
-
-\item Remark : The base of the logarithm depends on the unit of information to be used.
-\end{itemize}
-}
-
-
-
-%-------------------------------------------------------------------------------------------%
-{
-Ambiguity occurs if there is any path to some symbol whose label is a prefix of the label of a path to some other symbol. In the Huffman tree, every symbol is a \textbf{\emph{leaf}}. Thus it is impossible for the label of a path to a leaf to be a prefix of any other path label, and so the mapping defined by Huffman coding has an inverse and decoding is possible.
-}
-%-------------------------------------------------------------------------------------------%
-{
-\noindent \textbf{Example}
-For a simple example, we will take a short phrase and derive our probabilities from a frequency count of letters within that phrase. The resulting encoding should be good for compressing this phrase, but of course will be inappropriate for other phrases with a different letter distribution.
-
-"All you base are belong to us"
-}
