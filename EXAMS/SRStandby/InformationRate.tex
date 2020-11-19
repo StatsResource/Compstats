@@ -1,0 +1,60 @@
+ \documentclass[a4paper,12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{eurosym}
+\usepackage{vmargin}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{graphics}
+\usepackage{epsfig}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.00.0.2570}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{LastRevised=Wednesday, February 23, 2011 13:24:34}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{Language=American English}
+
+\pagestyle{fancy}
+\setmarginsrb{20mm}{0mm}{20mm}{25mm}{12mm}{11mm}{0mm}{11mm}
+\lhead{MA4413 2013} \rhead{Mr. Kevin O'Brien}
+\chead{Addition to Formula Sheet }
+%\input{tcilatex}
+
+\begin{document}
+
+\Large 
+\subsection*{Part C : Rate of Information}
+A high-resolution TV picture consists of about $2 \times 10^6$ picture elements (symbols) and 16
+different brightness levels.\\
+\newline
+Pictures are repeated at a rate of 32 per second. All picture elements
+are assumed to be independent, and all levels have equal likelihood of occurrence. 
+\begin{itemize}
+\item[(a)]Calculate the
+average rate of information conveyed by this TV picture source.
+\end{itemize}
+
+
+\subsection*{Solution}
+\[R = rH(X)\]
+\begin{itemize}
+\item Entropy \[H(X) = - \sum \limits^{16}_{i=1} {1\over 16} \mbox{log}_2 \left( {1\over 16} \right)\] \bigskip
+
+\[H(X) = [ -{1\over 16} \mbox{log}_2{1\over 16} ] + [- {1\over 16} \mbox{log}_2{1\over 16} ] \ldots [ -{1\over 16} \mbox{log}_2{1\over 16}) ] \] \bigskip
+\item Sixteen identical terms. Compute one and multiply by 16.
+
+\[ H(X) = 16 \times [ -{1\over 16} \mbox{log}_2{1\over 16} ]  = -\mbox{log}_2{1\over 16} = -(-4) = 4\] \bigskip
+\item $H(X)= 4$ b
+\item $r =  (2 \times 10^6)(32) = 64(10^6)$ elements/sec \bigskip
+
+\item $R = rH(X) = 64(10^6)(4) = 256 \times 10^6) \mbox{ b/sec } = 256 \mbox{ Mb/sec }$ \bigskip
+\end{itemize}
+
+\newpage 
+
+BLANK
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

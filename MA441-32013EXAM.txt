@@ -38,5 +38,3 @@ Q4
 (i)	3 or more flaws will occur in a 3  metre length 
 (ii)	Exactly 4 flaws will occur in a 10 metre length
 (iii)	8 or less flaws will occur in a 6  metre length 
-
-(c)	There is a constant probability of 0.05  that the power supply in telecoms network will not start.  You are requested to calculate the probability that the power supply will fail the 5th time it is activated.
