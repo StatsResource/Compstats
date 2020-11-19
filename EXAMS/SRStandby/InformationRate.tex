@@ -6,6 +6,7 @@
 \usepackage{multicol}
 \usepackage{graphics}
 \usepackage{epsfig}
+\usepackage{framed}
 \usepackage{subfigure}
 \usepackage{fancyhdr}
 
@@ -19,8 +20,8 @@
 
 \pagestyle{fancy}
 \setmarginsrb{20mm}{0mm}{20mm}{25mm}{12mm}{11mm}{0mm}{11mm}
-\lhead{MA4413 2013} \rhead{Mr. Kevin O'Brien}
-\chead{Addition to Formula Sheet }
+\lhead{StatsResource} \rhead{Information Theory}
+
 %\input{tcilatex}
 
 \begin{document}
@@ -39,14 +40,27 @@ average rate of information conveyed by this TV picture source.
 
 
 \subsection*{Solution}
-\[R = rH(X)\]
+
+
+\begin{framed}
+\[R = rH(X)\] 
+
 \begin{itemize}
+    \item $R$  - average rate of information
+    \item $r$ - number of symbols symbols that are being transmitted per second
+    \item $H(X)$ - Entropy
+\end{itemize}
+\end{framed}
+
+
+\begin{itemize}
+
 \item Entropy \[H(X) = - \sum \limits^{16}_{i=1} {1\over 16} \mbox{log}_2 \left( {1\over 16} \right)\] \bigskip
 
-\[H(X) = [ -{1\over 16} \mbox{log}_2{1\over 16} ] + [- {1\over 16} \mbox{log}_2{1\over 16} ] \ldots [ -{1\over 16} \mbox{log}_2{1\over 16}) ] \] \bigskip
+\[H(X) = \left[ -{1\over 16} \mbox{log}_2 \left({ 1\over 16}  \right)\right] + \left[- {1\over 16} \mbox{log}_2 \left({ 1\over 16}  \right)\right] \ldots\left[ -{1\over 16} \mbox{log}_2 \left({ 1\over 16}  \right)\right] \] \bigskip
 \item Sixteen identical terms. Compute one and multiply by 16.
 
-\[ H(X) = 16 \times [ -{1\over 16} \mbox{log}_2{1\over 16} ]  = -\mbox{log}_2{1\over 16} = -(-4) = 4\] \bigskip
+\[ H(X) = 16 \times \left[ -{1\over 16} \mbox{log}_2 \left({ 1\over 16}  \right)\right]  = -\mbox{log}_2 \left({ 1\over 16}  \right)= -(-4) = 4\] \bigskip
 \item $H(X)= 4$ b
 \item $r =  (2 \times 10^6)(32) = 64(10^6)$ elements/sec \bigskip
 
