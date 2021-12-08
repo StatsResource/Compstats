@@ -50,104 +50,6 @@ The code efficiency is defined as \[\eta = {L_{min} \over L} \]where $L_{min}$ i
 \end{itemize}
 
 
-%-----------------------------------------------------------------Part 3 Data Compression %
-
-{
-\noindent \textbf{Data compression(1)}
-Data compression is the science (and art) of representing information in a compact form. Having been the domain of a relatively small group of engineers and scientists, it is now ubiquitous. \\ \bigskip It has been one of the critical enabling technologies for the on-going digital multimedia revolution for decades. Without compression techniques, none of the ever-growing Internet, digital TV, mobile communication or increasing video communication would have been practical developments. \\ \bigskip
-}
-%-----------------------------------------------------------------------------------------------%
-{
-\noindent \textbf{Data compression(1)}
-
-Data compression is an active research area in computer science. By "compressing data", we actually mean deriving techniques or, more specifically, designing efficient algorithms to:
-
-\begin{itemize}
-\item represent data in a less redundant fashion
-\item remove the redundancy in data
-\item implement coding, including both encoding and decoding.
-\end{itemize}
-
-}
-
-
-%----------------------------------------------------------------Part 4 Huffman Coding-%
-
-{
-\noindent \textbf{Huffman encoding algorithm}
-Huffman coding is an entropy encoding algorithm used for lossless data compression.\\
-\bigskip
-A frequency based coding scheme (algorithm) that follows Huffman's idea is called Huffman coding. Huffman coding is a simple algorithm that generates a set of variable-size codewords of the minimum average length. The algorithm for Huffman encoding involves the following steps:
-}
-%--------------------------------------------------------------Part 4 Huffman Coding-%
-
-{
-\begin{itemize}
-\item[1.] Frequency Table: Constructing a frequency table sorted in descending order.
-
-\item[2.] Building a binary tree:
-    Carrying out iterations until completion of a complete binary tree:
-    \begin{itemize}
-    \item[(a)] Merge the last two items (which have the minimum frequencies) of    the frequency table to form a new combined item with a sum
-    frequency of the two.
-    \item[(b)] Insert the combined item and update the frequency table.
-    \end{itemize}
-
-\item[3.] Deriving Huffman tree:
-Starting at the root, trace down to every leaf; mark �0� for a left branch and �1� for a right branch.
-
-\item[4.] Generating Huffman code:
-Collecting the 0s and 1s for each path from the root to a leaf and assigning a 0-1 codeword for each symbol.
-
-\end{itemize}
-}
-%--------------------------------------------------------------------------Part 4 Huffman Coding-%
-
-{
-
-Huffman coding is a method of lossless data compression, and a form of entropy encoding. The basic idea is to map an alphabet to a representation for that alphabet, composed of strings of variable size, so that symbols that have a higher probability of occurring have a smaller representation than those that occur less often.
-
-}
-%-------------------------------------------------------------------------------Part 4 Huffman Coding-%
-
-{
-The key to Huffman coding is Huffman's algorithm, which constructs an extended binary tree of minimum weighted path length from a list of weights. For this problem, our list of weights consists of the probabilities of symbol occurrence. From this tree (which we will call a Huffman tree for convenience), the mapping to our variable-sized representations can be defined.
-}
-%-----------------------------------------------------------------------Part 4 Huffman Coding-%
-{
-The mapping is obtained by the path from the root of the Huffman tree to the leaf associated with a symbol's weight. The method can be arbitrary, but typically a value of 0 is associated with an edge to any left child and a value of 1 with an edge to any right child (or vice-versa). By concatenating the labels associated with the edges that make up the path from the root to a leaf, we get a binary string. Thus the mapping is defined.
-}
-%-------------------------------------------------------------------------------------------%
-{
-\noindent \textbf{Inverse Mapping}
-\begin{itemize}
-\item In order to recover the symbols that make up a string from its representation after encoding, an inverse mapping must be possible. It is important that this mapping is unambiguous. \item We can show that all possible strings formed by concatenating any number of path labels in a Huffman tree are indeed unambiguous, due to the fact that it is a complete binary tree. \item That is, given a string composed of Huffman codes, there is exactly one possible way to decompose it into the individual codes.
-\end{itemize}
-}
-
-{
-\noindent \textbf{Data compression(2)}
-The key approaches of data compression can be summarized as modelling + coding.
-Modelling is a process of constructing a knowledge system for
-performing compression. Coding includes the design of the code and product of the compact data form.
-
-}
-
-% - Entropy
-% - Information
-% - Mutual Information
-
-
-
-%-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%
-
-
-% page 247
-
-
-
-
-
 
 
 
@@ -206,61 +108,6 @@ Huffman coding is an entropy encoding algorithm used for lossless data compressi
 
 
 }
-%----------------------------------------------------------------------------------%
-
-{
-\noindent \textbf{Huffman encoding algorithm}
-
-A frequency based coding scheme (algorithm) that follows Huffman�s idea is called Huffman coding. Huffman coding is a simple algorithm that generates a set of variable-size codewords of the minimum average length. The algorithm for Huffman encoding involves the following steps:
-}
-%----------------------------------------------------------------------------------%
-
-{
-\begin{itemize}
-\item[1.] Frequency Table: Constructing a frequency table sorted in descending order.
-
-\item[2.] Building a binary tree:
-    Carrying out iterations until completion of a complete binary tree:
-    \begin{itemize}
-    \item[(a)] Merge the last two items (which have the minimum frequencies) of    the frequency table to form a new combined item with a sum
-    frequency of the two.
-    \item[(b)] Insert the combined item and update the frequency table.
-    \end{itemize}
-
-\item[3.] Deriving Huffman tree:
-Starting at the root, trace down to every leaf; mark �0� for a left branch and �1� for a right branch.
-
-\item[4.] Generating Huffman code:
-Collecting the 0s and 1s for each path from the root to a leaf and assigning a 0-1 codeword for each symbol.
-
-\end{itemize}
-}
-%----------------------------------------------------------------------------------%
-
-{
-\noindent \textbf{Huffman Coding}
-Huffman coding is a method of lossless data compression, and a form of entropy encoding. The basic idea is to map an alphabet to a representation for that alphabet, composed of strings of variable size, so that symbols that have a higher probability of occurring have a smaller representation than those that occur less often.
-
-}
-%----------------------------------------------------------------------------------%
-
-{
-\noindent \textbf{Huffman Coding}
-The key to Huffman coding is Huffman's algorithm, which constructs an extended binary tree of minimum weighted path length from a list of weights. For this problem, our list of weights consists of the probabilities of symbol occurrence. From this tree (which we will call a Huffman tree for convenience), the mapping to our variable-sized representations can be defined.
-}
-%-------------------------------------------------------------------------------------------%
-{
-\noindent \textbf{Huffman Coding}
-The mapping is obtained by the path from the root of the Huffman tree to the leaf associated with a symbol's weight. The method can be arbitrary, but typically a value of 0 is associated with an edge to any left child and a value of 1 with an edge to any right child (or vice-versa). By concatenating the labels associated with the edges that make up the path from the root to a leaf, we get a binary string. Thus the mapping is defined.
-}
-%-------------------------------------------------------------------------------------------%
-{
-\noindent \textbf{Inverse Mapping}
-\begin{itemize}
-\item In order to recover the symbols that make up a string from its representation after encoding, an inverse mapping must be possible. It is important that this mapping is unambiguous. \item We can show that all possible strings formed by concatenating any number of path labels in a Huffman tree are indeed unambiguous, due to the fact that it is a complete binary tree. \item That is, given a string composed of Huffman codes, there is exactly one possible way to decompose it into the individual codes.
-\end{itemize}
-}
-%-------------------------------------------------------------------------------------------%
 {
 
 \noindent \textbf{Ambiguity}
@@ -268,69 +115,12 @@ The mapping is obtained by the path from the root of the Huffman tree to the lea
 Ambiguity occurs if there is any path to some symbol whose label is a prefix of the label of a path to some other symbol. In the Huffman tree, every symbol is a \textbf{\emph{leaf}}. Thus it is impossible for the label of a path to a leaf to be a prefix of any other path label, and so the mapping defined by Huffman coding has an inverse and decoding is possible.
 }
 
-\end{document}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-%-----------------------------------------------------------------------------------------------%
- % ULCIS
-\noindent \textbf{Self Information}Self-information
-This is defined by the following mathematical formula:$I(A) = −logb P(A)$
-
-The self-information of an event measures the amount of one's surprise
-evoked by the event. The negative logarithm $−logb P(A)$ can also be written as \[
-log_b  {1 \over P(A)} \]
-Note that log(1) = 0, and that $| − log(P(A))|$ increases as P(A) decreases
-from 1 to 0. This supports our intuition from daily experience. For example,
-a low-probability event tends to cause more ``surprise".
-
-
-
-%-------------------------------------------------------------------------------------------%
-{
 \noindent \textbf{Example}
 For a simple example, we will take a short phrase and derive our probabilities from a frequency count of letters within that phrase. The resulting encoding should be good for compressing this phrase, but of course will be inappropriate for other phrases with a different letter distribution.
 
 "All you base are belong to us"
 }
-
-
-%----------------------------------------------------------------------------------%
-{
-\noindent \textbf{Entropy}
-\begin{itemize}
-\item Entropy is the uncertainty of a single random variable. \item We can define \textbf{\emph{conditional entropy }}$H(X|Y)$, which is the entropy of a random variable
-conditional on the knowledge of another random variable. \item The reduction in uncertainty due to another random variable is called the \textbf{\emph{mutual information}}.
-\end{itemize}
-}
-%----------------------------------------------------------------------------------%
-
-
-
-%----------------------------------------------------------------------------------%
-{
-\begin{description}[Second Item]
-\item[First Item] Description of first item
-\item[Second Item] Description of second item
-\item[Third Item] Description of third item
-\item[Forth Item] Description of forth item
-\end{description}
-
-}
-
 
 {
 \noindent \textbf{What is Information?}
@@ -343,14 +133,3 @@ conditional on the knowledge of another random variable. \item The reduction in 
 
 
 
-%-------------------------------------------------------------------------------------------%
-{
-Ambiguity occurs if there is any path to some symbol whose label is a prefix of the label of a path to some other symbol. In the Huffman tree, every symbol is a \textbf{\emph{leaf}}. Thus it is impossible for the label of a path to a leaf to be a prefix of any other path label, and so the mapping defined by Huffman coding has an inverse and decoding is possible.
-}
-%-------------------------------------------------------------------------------------------%
-{
-\noindent \textbf{Example}
-For a simple example, we will take a short phrase and derive our probabilities from a frequency count of letters within that phrase. The resulting encoding should be good for compressing this phrase, but of course will be inappropriate for other phrases with a different letter distribution.
-
-"All you base are belong to us"
-}
