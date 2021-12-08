@@ -1,0 +1,78 @@
+ \documentclass[a4paper,12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{eurosym}
+\usepackage{vmargin}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{graphics}
+\usepackage{epsfig}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.00.0.2570}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{LastRevised=Wednesday, February 23, 2011 13:24:34}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{Language=American English}
+
+\pagestyle{fancy}
+\setmarginsrb{20mm}{0mm}{20mm}{25mm}{12mm}{11mm}{0mm}{11mm}
+\lhead{MA4413 2013} \rhead{Mr. Kevin O'Brien}
+\chead{Addition to Formula Sheet }
+%\input{tcilatex}
+
+\begin{document}
+\large 
+
+
+\noindent \textbf{Paired Data}
+\begin{itemize}
+\item Two measurements are paired when they come from the same case (person, item, observational unit). It is not ncessary for the measurements to be denominated in the same units, but very helpful.
+\item Pairing is determined by a study's design and the way the data values are obtained, and with the actual data values themselves not being particularly relevant. 
+\item Observations are paired rather than independent when there is a natural link between an observation in one set of measurements and a particular observation in the other set of measurements.
+\item Examples of paired data: \textit{\textbf{before and after}} measurements,\textit{ \textbf{with and without}} measurements, and two simultaneous measurements on the same item.
+\end{itemize}
+
+
+\bigskip 
+\begin{itemize}
+\item We are usually required to compute the case-wise difference for each data pairing.
+\item Importantly, although we start out with two samples of data, we can look at the data as a single sample of \textit{\textbf{case-wise differences}}.
+\[d_i = x_i-y_i\]
+\item We can use the same methodologies that we have encountered previously for making decisions based on paired data.
+\item (Remark: For most paired data studies, the sample sizes are very small.)
+\end{itemize}
+
+%-------------------------------------------------------------------------------------------%
+
+\newpage 
+\noindent \textbf{The Paired t-test}
+\begin{itemize}
+\item We will often be required to compute the case-wise differences, the average of those differences and the standard deviation of those difference.
+
+\item The mean difference for a set of differences between paired observations is
+\[ \bar{d} = {\sum d_i \over n }\]
+
+\item The computational formula for the standard deviation of the differences
+between paired observations is
+\[s_d = \sqrt{ {\sum d_i^2 - n\bar{d}^2 \over n-1}}\]
+%\item It is nearly always a small sample test.
+\end{itemize}
+
+
+
+Using the sample to make inferences about the general population of case-wise differences.
+\begin{itemize}
+\item Often we are making conclusions for the population of differences. (Is a training regime effective? - based on a paired data sample.)
+\item Let $\mu_d$ be mean value for the population of case-wise differences.
+\item The null hypothesis is that that $\mu_d = 0$ (i.e. no difference)
+\item Given $\bar{d}$ mean value for the sample of differences, and $s_d$ standard deviation of the differences for the paired sample data, we can perform inference procedures as we have done previously.
+\end{itemize}
+
+\end{document}
+
+
+
+
