@@ -1,0 +1,126 @@
+
+%--------------------------------------------------------------------------%
+
+\noindent \textbf{Two Sample Inference Procedures}
+\begin{itemize}
+\item Previously we looked at inference procedures (Confidence Intervals and Hypothesis Testing) for single samples.
+\item Yesterday we looked at \textit{\textbf{paired}} samples, with two sets of paired measurements. With paired measurements, we are specifically interested in the \textbf{\textit{case-wise}} differences.
+\item Although there are two sets of data, we consider the single data set of case-wise differences.
+\item Now we look at the case of two independent sample procedures.
+\item Independent samples are distinct from paired samples, in that data in one set are not paired with data in another set.
+\end{itemize}
+
+
+%--------------------------------------------------------------------------%
+
+\noindent \textbf{Two Sample Inference Procedures}
+
+\begin{itemize}
+\item Firstly, we will look at the difference in the means of two independent populations.
+\item Let us assume that the both populations are normally distributed $N(\mu_X,\sigma^2_X)$ and $N(\mu_Y,\sigma^2_Y)$
+\item The difference in means for two independent populations X and Y is denoted $\mu_X - \mu_Y$.
+\item Almost always, this value is unknown, and is instead estimated by the difference in sample means: $\bar{X} - \bar{Y}.$
+\item The sample sizes do not need to be equal necessarily. We denote the respective sample sizes $n_X$ and $n_Y$.
+\item For the moment, we will assume that both $n_X$ and $n_Y$ are large samples ($ \geq 30$).
+\end{itemize}
+
+%--------------------------------------------------------------------------%
+
+\noindent \textbf{Sampling}
+\begin{itemize}
+\item The sampling distribution of the difference in means is normally distributed, when both samples sizes are greater than 30.
+\item The expected value of this distribution is $\mu_X - \mu_Y$.
+\item Importantly, the standard error of this distribution is
+\[ S.E(\bar{X} - \bar{Y}) = \sqrt{\frac{\sigma^2_X}{n_X} + \frac{\sigma^2_Y}{n_Y}} \]
+\item The standard deviations for populations X and Y are $\sigma_X$ and $\sigma_Y$ respectively.
+\item Usually these population standard deviations are estimated by the sample standard deviations $s_X$ and $s_Y$ respectively.
+\end{itemize}
+
+
+%--------------------------------------------------------------------------%
+
+\noindent \textbf{$95\%$ Confidence Intervals}
+The 95\% confidence interval $\mu_X - \mu_Y$ is computed as
+
+\[ (\bar{X} - \bar{Y}) \pm 1.96 \sqrt{\frac{s^2_X}{n_X} + \frac{s^2_Y}{n_Y}}\]
+We will use this in an example shortly.
+
+%--------------------------------------------------------------------------%
+
+\noindent \textbf{Hypothesis Testing}
+\begin{itemize}
+\item Hypothesis testing works in much the same way as material we have covered already, in that we will use a four step process.
+\item The final two steps (critical value step and decision rule step) are precisely the same as previously.
+\item We will now discuss the first two steps.
+\end{itemize}
+
+
+%--------------------------------------------------------------------------%
+
+
+\noindent \textbf{Hypothesis Testing: Null and Alternative Hypothesis}
+We are often interested in whether or not two populations have equal mean values. Accordingly, we would construct the hypotheses accordingly.
+\begin{itemize}
+\item[$H_0$] $\mu_X = \mu_Y$
+\item[$H_1$] $\mu_X \neq \mu_Y$
+\end{itemize}
+
+Equivalently we may view in the context of the difference in the populations means, where a difference of zero indicates equality of means.
+\begin{itemize}
+\item[$H_0$] $\mu_X - \mu_Y = 0$
+\item[$H_1$] $\mu_X - \mu_Y \neq 0$
+\end{itemize}
+This second approach is more intuitive in the context of constructing the test statistic.
+
+%--------------------------------------------------------------------------%
+
+
+\noindent \textbf{Hypothesis Testing: Test Statistic}
+
+\begin{itemize}
+\item The standard error for difference in means has been introduced previously
+\[ S.E(\bar{X} - \bar{Y}) = \sqrt{\frac{\sigma^2_X}{n_X} + \frac{\sigma^2_Y}{n_Y}} \]
+\item \textbf{Null value}: The expected value of the difference under the null hypothesis $\mu_X - \mu_Y$ is always 0, when the equality of population means is in question.
+\item \textbf{Observed Value}: The observed difference between sample means is $\bar{X} - \bar{Y}$.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+%--------------------------------------------------------------------------%
+
+
+\noindent \textbf{Two Small Samples Case}
+\begin{itemize}
+\item Previously we have looked at large samples, now we will consider small samples.
+\item (For the sake of clarity, I will not use small samples that have a combined sample size of greater than 30.
+\item Additionally we require the assumption that both samples have equal variance. This assumption \textbf{must} be tested with another formal hypothesis test. We will revisit this later, and in the mean time, assume that the assumption of equal variance holds.
+\end{itemize}
+
+
+
+\noindent \textbf{Two Small Samples Case}
+\begin{itemize}
+\item The key differences between the large sample case and the small sample cases arise in the following steps.
+    \begin{itemize}
+    \item The standard error is computed in a different way (see next slide).
+    \item The degrees of freedom used to compute the critical value is $(n_X-1) + (n_Y - 1)$) or equivalently ($n_X + n_Y - 2$).
+    \item Also - a formal test of equality of variances is required beforehand (End of Year Exam)
+    \end{itemize}
+\end{itemize}
+
+
+\noindent \textbf{Two Small Samples Case: Standard Error}
+Computing the standard error requires a two step calculation. From the formulae, we have the two equations below. The first term $s_p^2$ is called the \textbf{\textit{pooled variance}} of the combined samples.
+\begin{eqnarray*}
+s_p^2&=&\frac{s_X^2(n_X-1)+s_Y^2(n_Y-1)}{n_X+n_Y-2}.\\
+S.E.(\bar{X}-\bar{Y})&=&\sqrt{s_p^2\left(\frac{1}{n_X}+\frac{1}{n_Y}\right)}.\\
+\end{eqnarray*}
+
+
+\end{document}
