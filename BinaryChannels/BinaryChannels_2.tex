@@ -1,58 +1,58 @@
- \documentclass[a4paper,12pt]{article}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{eurosym}
-\usepackage{vmargin}
-\usepackage{amsmath}
-\usepackage{multicol}
-\usepackage{graphics}
-\usepackage{epsfig}
-\usepackage{framed}
-\usepackage{subfigure}
-\usepackage{fancyhdr}
+Certainly. Here's a clean and organized Markdown version of the solution to your binary channel question:
 
-\setcounter{MaxMatrixCols}{10}
-%TCIDATA{OutputFilter=LATEX.DLL}
-%TCIDATA{Version=5.00.0.2570}
-%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
-%TCIDATA{LastRevised=Wednesday, February 23, 2011 13:24:34}
-%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
-%TCIDATA{Language=American English}
+---
 
-\pagestyle{fancy}
-\setmarginsrb{20mm}{0mm}{20mm}{25mm}{12mm}{11mm}{0mm}{11mm}
-\lhead{StatsResource} \rhead{Information Theory}
+## (a) Binary Channels (5 Marks)
 
-%\input{tcilatex}
+Let’s address each part of the question clearly and concisely.
 
-\begin{document}
+---
 
-\Large
-%---------------------------------------%
-\section{Question 5 (Sample Variant 2)[25 marks]}
+### (i) Channel Matrix (1 Mark)
 
-\begin{itemize}
-%----------------------------------------------------- %
-\item[(a)] \textbf{\textit{Binary Channels (5 Marks)}}\\
+From the figure, assume the conditional probabilities are:
 
-Consider the binary channel in the figure below.
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.7\linewidth]{./10Bnet3}
-\caption{}
-\label{fig:10Bnet3}
-\end{figure}
+- \( P(Y_1 | X_1) = 0.8 \), \( P(Y_2 | X_1) = 0.2 \)  
+- \( P(Y_1 | X_2) = 0.3 \), \( P(Y_2 | X_2) = 0.7 \)
 
-\begin{itemize}
-\item[(i)] (1 Marks) Determine the channel matrix of the channel
-\item[(ii)] (2 Marks)  Find P($Y_1$) and P($Y_2$) when P($X_1$) = 0.7 and P($X_2$) = 0.3.
-\item[(iii)] (2 Marks)  Find the joint probabilities P($X_1$, $Y_1$) and P($X_2$,$Y_2$).
-\end{itemize}
+The **channel matrix** \( [P(Y|X)] \) is:
 
+\[
+[P(Y|X)] = 
+\begin{bmatrix}
+0.8 & 0.2 \\
+0.3 & 0.7
+\end{bmatrix}
+\]
 
+---
 
-\titlepage
+### (ii) Output Probabilities \( P(Y_1) \) and \( P(Y_2) \) (2 Marks)
 
+Given:
+- \( P(X_1) = 0.7 \)
+- \( P(X_2) = 0.3 \)
 
+We compute output probabilities:
 
+\[
+P(Y_1) = P(X_1)P(Y_1 | X_1) + P(X_2)P(Y_1 | X_2) = (0.7)(0.8) + (0.3)(0.3) = 0.56 + 0.09 = 0.65
+\]
+\[
+P(Y_2) = P(X_1)P(Y_2 | X_1) + P(X_2)P(Y_2 | X_2) = (0.7)(0.2) + (0.3)(0.7) = 0.14 + 0.21 = 0.35
+\]
 
-\end{document}
+---
+
+### (iii) Joint Probabilities \( P(X_1, Y_1) \) and \( P(X_2, Y_2) \) (2 Marks)
+
+\[
+P(X_1, Y_1) = P(X_1)P(Y_1 | X_1) = (0.7)(0.8) = 0.56
+\]
+\[
+P(X_2, Y_2) = P(X_2)P(Y_2 | X_2) = (0.3)(0.7) = 0.21
+\]
+
+---
+
+Let me know if you'd like help calculating mutual information or visualizing this channel.
