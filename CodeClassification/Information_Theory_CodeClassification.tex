@@ -1,32 +1,96 @@
-\documentclass[a4]{beamer}
-\usepackage{amssymb}
-\usepackage{graphicx}
-\usepackage{subfigure}
-\usepackage{newlfont}
-\usepackage{amsmath,amsthm,amsfonts}
-%\usepackage{beamerthemesplit}
-\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
-\usepackage{mathptmx} % Font Family
-\usepackage{helvet} % Font Family
-\usepackage{color}
-\mode<presentation> {
-\usetheme{Default} % was Frankfurt
-\useinnertheme{rounded}
-\useoutertheme{infolines}
-\usefonttheme{serif}
-%\usecolortheme{wolverine}
-% \usecolortheme{rose}
-\usefonttheme{structurebold}
-}
-\setbeamercovered{dynamic}
-\title[MA4413]{Statistics for Computing \\ {\normalsize MA4413 Lecture 12A}}
-\author[Kevin O'Brien]{Kevin O'Brien \\ {\scriptsize kevin.obrien@ul.ie}}
-\date{Autumn 2011}
-\institute[Maths \& Stats]{Dept. of Mathematics \& Statistics, \\ University \textit{of} Limerick}
-\renewcommand{\arraystretch}{1.5}
-%------------------------------------------------------------------------%
+Here’s a streamlined and clearly organized version of your beamer presentation on **binary source codes**, formatted as Markdown for readability and revision purposes:
 
-\begin{document}
+---
+
+# MA4413 Lecture 12A – Binary Source Coding
+
+## Code Table: Source of Size 4
+
+| Symbol | Code 1 | Code 2 | Code 3 | Code 4 | Code 5 | Code 6 |
+|--------|--------|--------|--------|--------|--------|--------|
+| \( x_1 \) | 00     | 00     | 0      | 0      | 0      | 1      |
+| \( x_2 \) | 01     | 01     | 1      | 10     | 01     | 01     |
+| \( x_3 \) | 00     | 10     | 00     | 110    | 011    | 001    |
+| \( x_4 \) | 11     | 11     | 11     | 111    | 0111   | 0001   |
+
+---
+
+## Code Classifications
+
+- **Code 1**: Fixed length, not distinct → Invalid  
+- **Code 2**: Fixed length and distinct  
+- **Code 3**: Not uniquely decodable → Invalid  
+
+---
+
+## Prefix-Free Codes
+
+- A prefix-free code ensures **no codeword is a prefix of another**.
+- All prefix-free codes are **uniquely decodable**, but not all uniquely decodable codes are prefix-free.
+- **Valid Prefix-Free Codes**: Code 4 and Code 6  
+- **Code 5**: Not prefix-free but still uniquely decodable
+
+---
+
+## Word Lengths
+
+- Code 2: All lengths are 2  
+- Code 6: \( n_1 = 1,\ n_2 = 2,\ n_3 = 3,\ n_4 = 4 \)
+
+---
+
+## Average Code Word Length \( E(L) \)
+
+Given symbol probabilities:  
+\[
+P(x_1) = 0.4,\quad P(x_2) = 0.3,\quad P(x_3) = 0.2,\quad P(x_4) = 0.1
+\]
+
+\[
+E(L) = \sum_{i=1}^{4} P(x_i) \cdot n_i
+\]
+
+| Code | Average Length \( E(L) \) |
+|------|---------------------------|
+| Code 1 & 2 | 2.00 |
+| Code 3 | 1.30 |
+| Code 4 | 1.90 |
+| Code 5 & 6 | 2.00 |
+
+---
+
+## Interpretation (100 Symbols)
+
+- Code 4 → 190 bits; uniquely decodable → efficient  
+- Code 3 → 130 bits; not uniquely decodable → flawed  
+- Others → 200 bits each
+
+---
+
+## Entropy and Efficiency
+
+Given source entropy: \( H(X) = 1.85 \)
+
+\[
+\eta = \frac{H(X)}{E(L)} \times 100\%
+\]
+
+| Code | Efficiency \( \eta \) |
+|------|------------------------|
+| Code 1 & 2 | 92.5% |
+| Code 3 | 142.3% (invalid) |
+| Code 4 | 97.2% |
+| Code 5 & 6 | 92.5% |
+
+---
+
+## Instantaneous Codes
+
+- An instantaneous code allows **immediate decoding** without needing future symbols.
+- Requires prefix-freeness.
+- **Instantaneous Codes**: Code 2, Code 4, Code 6
+
+---
 
 %---------------------------------------------------------------------------------------------------------------------------------------%
 \begin{frame}
