@@ -1,0 +1,83 @@
+
+{
+\noindent \textbf{Entropy: some remarks}
+\begin{itemize}
+\item recall: Entropy is the uncertainty of a single random variable. \item We can define \textbf{\emph{conditional entropy }}$H(X|Y)$, which is the entropy of a random variable
+conditional on the knowledge of another random variable. \item The reduction in uncertainty due to another random variable is called the \textbf{\emph{mutual information}}.
+\end{itemize}
+}
+
+
+\noindent \textbf{Code efficiency and Code redundancy}
+% Pg 253/254
+The parameter $L$ represents the average number of bits per source symbol used in the source coding process.
+The code efficiency is defined as \[\nu = {L_{min} \over L} \]where $L_{min}$ is the minimum possiblve value of $L$. When $\nu$ approaches unity, the codes is said to be efficient.
+The code redundancy $\gamma$ is defined as $\gamma = 1- \nu$.
+
+
+
+%---------------------------------------------------------------------------------------------------------------------------------------%
+
+%page 254
+\noindent \textbf{Source Coding Theorem}
+The source coding theorem states that for zi DMS X with entropy $H(X)$, the average code word length $L$ per symbol is bounded as
+L 2 H(X) (10.52)
+
+and further, L can bc made as close to H(X) as dcsircd for some suitably chosen code.
+Thus, with$ L_{min} \geq H(X)$.
+
+The code efficiency can be rewritten as
+\[\nu = {H(X) \over L} \]
+
+
+%-----------------------------------------------------------------------------------------------%
+ % ULCIS
+\noindent \textbf{Self Information}Self-information
+This is defined by the following mathematical formula:$I(A) = −logb P(A)$
+
+The self-information of an event measures the amount of one's surprise
+evoked by the event. The negative logarithm $−logb P(A)$ can also be written as \[
+log_b  {1 \over P(A)} \]
+Note that log(1) = 0, and that $| − log(P(A))|$ increases as P(A) decreases
+from 1 to 0. This supports our intuition from daily experience. For example,
+a low-probability event tends to cause more ``surprise".
+
+
+
+%-------------------------------------------------------------------------------------------%
+{
+\noindent \textbf{Example}
+For a simple example, we will take a short phrase and derive our probabilities from a frequency count of letters within that phrase. The resulting encoding should be good for compressing this phrase, but of course will be inappropriate for other phrases with a different letter distribution.
+
+"All you base are belong to us"
+}
+
+
+%----------------------------------------------------------------------------------%
+{
+\noindent \textbf{Entropy}
+\begin{itemize}
+\item Entropy is the uncertainty of a single random variable. \item We can define \textbf{\emph{conditional entropy }}$H(X|Y)$, which is the entropy of a random variable
+conditional on the knowledge of another random variable. \item The reduction in uncertainty due to another random variable is called the \textbf{\emph{mutual information}}.
+\end{itemize}
+}
+
+
+{
+\noindent \textbf{What is Information?}
+\begin{itemize} \item Once we agree to define the information of an event ain terms of P(a), the properties (2) and (3) will be satisfied if the information in ais defined as
+\[ I(a) = -log P(a)\]
+
+\item Remark : The base of the logarithm depends on the unit of information to be used.
+\end{itemize}
+}
+
+
+
+%-------------------------------------------------------------------------------------------%
+{
+Ambiguity occurs if there is any path to some symbol whose label is a prefix of the label of a path to some other symbol. In the Huffman tree, every symbol is a \textbf{\emph{leaf}}. Thus it is impossible for the label of a path to a leaf to be a prefix of any other path label, and so the mapping defined by Huffman coding has an inverse and decoding is possible.
+}
+
+
+
