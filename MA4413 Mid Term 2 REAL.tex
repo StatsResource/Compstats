@@ -1,27 +1,4 @@
- \documentclass[a4paper,12pt]{article}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{eurosym}
-\usepackage{vmargin}
-\usepackage{amsmath}
-\usepackage{multicol}
-\usepackage{graphics}
-\usepackage{epsfig}
-\usepackage{subfigure}
-\usepackage{fancyhdr}
 
-\setcounter{MaxMatrixCols}{10}
-%TCIDATA{OutputFilter=LATEX.DLL}
-%TCIDATA{Version=5.00.0.2570}
-%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
-%TCIDATA{LastRevised=Wednesday, February 23, 2011 13:24:34}
-%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
-%TCIDATA{Language=American English}
-
-\pagestyle{fancy}
-\setmarginsrb{20mm}{0mm}{20mm}{25mm}{12mm}{11mm}{0mm}{11mm}
-\lhead{MA4413 2013} \rhead{Mr. Kevin O'Brien}
-\chead{Midterm Assessment 2 }
-%\input{tcilatex}
 
 \begin{document}
 \subsection*{Part 1. Theory for Inference Procedures (4 Marks)}
@@ -97,40 +74,3 @@ Using a significance level of 5\%, test the hypothesis that the percentage of vo
 \newpage
 (\textbf{Room for Answers})
 \newpage
-
-
-\section*{Formulas for Standard Errors}
-\subsection*{Confidence Intervals}
-
-{\bf One sample}
-\begin{eqnarray*} S.E.(\bar{X})&=&\frac{\sigma}{\sqrt{n}}.\\\\
-S.E.(\hat{P})&=&\sqrt{\frac{\hat{p}\times(100-\hat{p})}{n}}.\\
-\end{eqnarray*}
-\subsection*{Hypothesis tests}
-{\bf One sample}
-\begin{eqnarray*}
-S.E.(\bar{X})&=&\frac{\sigma}{\sqrt{n}}.\\\\
-S.E.(\pi)&=&\sqrt{\frac{\pi\times(100-\pi)}{n}}
-\end{eqnarray*}
-\end{document}
-\[{\bf Two samples}
-\begin{eqnarray*}
-S.E.(\bar{X}_1-\bar{X}_2)&=&\sqrt{\frac{\sigma^2_1}{n_1}+\frac{\sigma_2^2}{n_2}}.\\\\
-S.E.(\hat{P_1}-\hat{P_2})&=&\sqrt{\frac{\hat{p}_1\times(100-\hat{p}_1)}{n_1}+\frac{\hat{p}_2\times(100-\hat{p}_2)}{n_2}}.\\\\
-\end{eqnarray*}
-\]
-\subsection*{Hypothesis tests}
-\[{\bf One sample}
-\begin{eqnarray*}
-S.E.(\bar{X})&=&\frac{\sigma}{\sqrt{n}}.\\\\
-S.E.(\pi)&=&\sqrt{\frac{\pi\times(100-\pi)}{n}}
-\end{eqnarray*}
-\]
-\[{\bf Two large independent samples}
-\begin{eqnarray*}
-S.E.(\bar{X}_1-\bar{X}_2)&=&\sqrt{\frac{\sigma^2_1}{n_1}+\frac{\sigma_2^2}{n_2}}.\\\\
-S.E.(\hat{P_1}-\hat{P_2})&=&\sqrt{\left(\bar{p}\times(100-\bar{p})\right)\left(\frac{1}{n_1}+\frac{1}{n_2}\right)}.\\
-\end{eqnarray*}
-\]
-
-\end{document}
