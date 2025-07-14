@@ -50,31 +50,8 @@ bits. The entropy is a measure of the average uncertainty in the
 random variable. It is the number of bits on average required to
 describe the random variable.
 \end{frame}
-\begin{frame}
-\begin{itemize}
-\item How to measure Information
-\item Self Information
-\item Instantaneouse Cod
-\item Joint Entropy
-\item Chain Rule for Entropy
-\item Prefix Code
-\item Shannon Fado Coding
-\item Mutual Information
-\end{itemize}
-\end{frame}
 
-%-----------------------------------------------------------------%
-\begin{frame}
-\frametitle{Definition} A code is called a prefix code or an instantaneous code if
-no codeword is a prefix of any other codeword.
-An instantaneous code can be decoded without reference to future codewords
-since the end of a codeword is immediately recognizable. 
 
-Hence,
-for an instantaneous code, the symbol $x_i$ can be decoded as soon as we
-come to the end of the codeword corresponding to it. We need not wait
-to see the codewords that come later. 
-\end{frame}
 %-----------------------------------------------------------------%
 \begin{frame}
 \frametitle{Self-information}
@@ -258,50 +235,8 @@ Collecting the 0s and 1s for each path from the root to a leaf and
 assigning a 0-1 codeword for each symbol.
 \end{frame}
 %-----------------------------------------------------------------%
-\begin{frame}
-\frametitle{Huffman’s idea}
-Instead of using a fixed-length code for each symbol, Huffman’s idea is to
-represent a frequently occurring character in a source with a shorter code and
-to represent a less frequently occurring one with a longer code. 
 
-So for a text
-source of symbols with different frequencies, the total number of bits in this
-way of representation is, hopefully, significantly reduced. That is to say, the
-number of bits required for each symbol on average is reduced.
-\end{frame}
-%-----------------------------------------------------------------%
-\begin{frame}
-Frequency of occurrence:\\
-E A O T J Q X\\
-5 5 5 3 3 2 1\\
-Suppose we find a code that follows Huffman’s approach. For example, the
-most frequently occurring symbol E and A are assigned the shortest 2-bit
-codeword, and the lest frequently occurring symbol X is given a longer 4-bit
-codeword, and so on, as below:\\
-E A O T J Q X\\
-10 11 000 010 011 0010 0011\\
-Then the total number of bits required to encode string `EEETTJX’ is only
-$2 + 2 + 2 + 3 + 3 + 3 + 4 = 19$ (bits). This is significantly fewer than
-$8 \times 7 = 56$ bits when using the normal 8-bit ASCII code.
-\end{frame}
 
-%-----------------------------------------------------------------%
-\begin{frame}
-\large
-1. Constructing a frequency table sorted in descending order.\\
-2. Building a binary tree\\
-Carrying out iterations until completion of a complete binary tree:\\
-(a) Merge the last two items (which have the minimum frequencies) of
-the frequency table to form a new combined item with a sum
-frequency of the two.\\
-(b) Insert the combined item and update the frequency table.\\ \bigskip
-3. Deriving Huffman tree
-Starting at the root, trace down to every leaf; mark ‘0’ for a left branch
-and ‘1’ for a right branch.\\
-4. Generating Huffman code:\\
-Collecting the 0s and 1s for each path from the root to a leaf and
-assigning a 0-1 codeword for each symbol.
-\end{frame}
 %-----------------------------------------------------------------%
 
 \begin{frame}
@@ -421,26 +356,6 @@ resources with less cost. \\ Active research on data compression can lead to
 innovative new products and help provide better services.
 \end{frame}
 \section{Information Theory}
-%-----------------------------------------------------------------------------------------------%
-%---http://www.cs.cmu.edu/~dst/Tutorials/Info-Theory/
-%-----------------------------------------------------------------------------------------------%
-\begin{frame}
-Information theory provides us with a formula for determining the number of bits required in an optimal code even when we don't know the code. Let's first consider uniform probability distributions where the number of possible outcomes is not a power of two. \\Suppose we had a conventional die with six faces.\\ The number of bits required to transmit one throw of a fair six-sided die is:$ log 6 = 2.58$. Once again,we can't really transmit a single throw in less than 3 bits, but a sequence of such throws can be transmitted using 2.58 bits on average. 
-\end{frame}
-%-----------------------------------------------------------------------------------------------%
-\begin{frame}
-\large
-The optimal code in this case is complicated, but here's an approach that's fairly simple and yet does better than 3 bits/throw. Instead of treating throws individually, consider them three at a time. The number of possible three-throw sequences is $6^3= 216$. \\Using 8 bits we can encode a number between 0 and 255, so a three-throw sequence can be encoded in 8 bits with a little to spare; this is better than the 9 bits we'd need if we encoded each of the three throws seperately.
-\end{frame}
-%-----------------------------------------------------------------------------------------------%
-\begin{frame}
-\large
-In probability terms, each possible value of the six-sided die occurs with equal probability $P=1/6$. Information theory tells us that the minmum number of bits required to encode a throw is $-log P = 2.58$.\\ If you look back at the eight-sided die example,you'll see that in the optimal code that was described, every message had a length exactly equal to -log P bits.
-\end{frame}
-%-----------------------------------------------------------------------------------------------%
-\begin{frame}
-\large Now let's look at how to apply the formula to biased (non-uniform) probability distributions.\\ Let the variable x range over the values to be encoded,and let P(x) denote the probability of that value occurring.\\ The expected number of bits required to encode one value is the weighted average of the number of bits required to encode each possible value,where the weight is the probability of that value: 
-\end{frame}
 
 \end{document}
 %------------------------------------------------------------------------%
